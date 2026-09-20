@@ -140,13 +140,38 @@ if ($Publish) {
     $assets = @($setupOut, $zipOut, (Join-Path $rel 'SHA256SUMS.txt'))
     $exists = $false
     try { gh release view $tag --repo $cfg.publicRepo *> $null; $exists = ($LASTEXITCODE -eq 0) } catch { $exists = $false }
-    if ($exists) {
-        Run 'gh' (@('release', 'upload', $tag, '--repo', $cfg.publicRepo, '--clobber') + $assets)
-        Run 'gh' @('release', 'edit', $tag, '--repo', $cfg.publicRepo, '--notes-file', $notes)
+    # Slow or flaky connections drop long uploads. So: create the release as a DRAFT with no
+    # files, upload each asset on its own with retries (skipping ones already complete), and
+    # only then publish. Re-running the command resumes where it stopped.
+    if (-not $exists) {
+        Run 'gh' @('release', 'create', $tag, '--repo', $cfg.publicRepo, '--title', "$($cfg.appName) $version", '--notes-file', $notes, '--draft')
     } else {
-        $argv = @('release', 'create', $tag, '--repo', $cfg.publicRepo, '--title', "$($cfg.appName) $version", '--notes-file', $notes, '--latest')
-        if ($Draft) { $argv += '--draft' }
-        Run 'gh' ($argv + $assets)
+        Run 'gh' @('release', 'edit', $tag, '--repo', $cfg.publicRepo, '--notes-file', $notes)
+    }
+    foreach ($asset in $assets) {
+        $name = Split-Path -Leaf $asset
+        $size = (Get-Item $asset).Length
+        $done = $false
+        for ($try = 1; $try -le 6 -and -not $done; $try++) {
+            # Parse the JSON here rather than passing a quoted jq filter: PowerShell mangles the quotes.
+            $remote = $null
+            $prev = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+            try {
+                $json = gh release view $tag --repo $cfg.publicRepo --json assets 2>$null
+                if ($LASTEXITCODE -eq 0 -and $json) {
+                    $remote = ($json | ConvertFrom-Json).assets | Where-Object { $_.name -eq $name -and $_.state -eq 'uploaded' } | Select-Object -First 1
+                }
+            } catch { $remote = $null } finally { $ErrorActionPreference = $prev }
+            if ($remote -and [int64]$remote.size -eq $size) { Write-Host "  $name already uploaded"; $done = $true; break }
+            Write-Host ("  uploading {0} ({1:N0} MB), attempt {2}" -f $name, ($size / 1MB), $try)
+            $prev = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+            try { gh release upload $tag $asset --repo $cfg.publicRepo --clobber } finally { $ErrorActionPreference = $prev }
+            if ($LASTEXITCODE -eq 0) { $done = $true } else { Start-Sleep -Seconds (10 * $try) }
+        }
+        if (-not $done) { throw "Could not upload $name after 6 attempts. Run the same command again to resume." }
+    }
+    if (-not $Draft) {
+        Run 'gh' @('release', 'edit', $tag, '--repo', $cfg.publicRepo, '--draft=false', '--latest')
     }
     Write-Host "Published: https://github.com/$($cfg.publicRepo)/releases/tag/$tag"
 } else {
