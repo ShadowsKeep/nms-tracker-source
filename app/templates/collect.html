@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import tile, chip, have_editor, bar %}
+{% block title %}Collect List{% endblock %}
+
+{% block content %}
+<header class="page-head">
+  <h1>Collect List</h1>
+  <p>Everything your open goals and ship repairs need, minus what you already have.</p>
+</header>
+
+<div class="toolbar">
+  <div class="seg">
+    <a class="seg-btn {% if raw_mode %}active{% endif %}" href="{{ url_for('pages.collect', mode='raw') }}"
+       title="Break crafted parts down into the raw materials to gather">Raw materials</a>
+    <a class="seg-btn {% if not raw_mode %}active{% endif %}" href="{{ url_for('pages.collect', mode='direct') }}"
+       title="Show crafted parts as-is, the way the game lists them">As listed in game</a>
+  </div>
+  <div class="seg" id="statusFilter">
+    <button class="seg-btn active" data-show="all">All</button>
+    <button class="seg-btn" data-show="missing">Still needed</button>
+    <button class="seg-btn" data-show="ready">Covered</button>
+  </div>
+  <input type="search" id="rowSearch" class="search" placeholder="Filter…" autocomplete="off">
+  <span class="count" id="rowCount"></span>
+</div>
+
+{% if not rows %}
+  <section class="panel empty">
+    <h2>Nothing to collect yet</h2>
+    <p>Add a <a href="{{ url_for('pages.items') }}">goal</a> or a <a href="{{ url_for('pages.ships') }}">ship repair</a> and the materials will show up here.</p>
+  </section>
+{% else %}
+  <section class="panel flush">
+    <table class="grid-table" id="collectTable">
+      <thead>
+        <tr><th>Material</th><th class="num">Need</th><th>You have</th><th class="num">Missing</th><th>Progress</th><th>Needed for</th></tr>
+      </thead>
+      <tbody>
+        {% for r in rows %}
+          <tr class="collect-row {{ 'is-ready' if r.missing == 0 else 'is-missing' }}" data-item="{{ r.item.id }}" data-need="{{ r.need }}">
+            <td>
+              {{ chip(r.item) }}
+              <div class="hints">
+                {% if r.refinable %}<span class="hint-tag">refinable</span>{% endif %}
+                {% if r.craftable %}<span class="hint-tag">craftable</span>{% endif %}
+                <span class="dim">{{ r.item.group }}</span>
+              </div>
+            </td>
+            <td class="num need-cell">{{ r.need }}</td>
+            <td>{{ have_editor(r.item.id, r.have) }}</td>
+            <td class="num missing-cell">{{ r.missing if r.missing else '✓' }}</td>
+            <td class="bar-cell">{{ bar(r.percent) }}</td>
+            <td class="sources">{% for s in r.sources %}<span class="source">{{ s }}</span>{% endfor %}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  {% if used %}
+    <section class="panel">
+      <h2>Already in your inventory</h2>
+      <p class="dim">These crafted parts were counted from what you own, so their ingredients are not on the list.</p>
+      <div class="chip-row">{% for u in used %}{{ chip(u.item, u.qty) }}{% endfor %}</div>
+    </section>
+  {% endif %}
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+  let showMode = 'all';
+  const rows = Array.from(document.querySelectorAll('.collect-row'));
+  const search = document.getElementById('rowSearch');
+  function applyRowFilter() {
+    const q = (search ? search.value : '').trim().toLowerCase();
+    let shown = 0;
+    rows.forEach(r => {
+      const ok = (showMode === 'all' || (showMode === 'missing') === r.classList.contains('is-missing'))
+              && (!q || r.textContent.toLowerCase().includes(q));
+      r.style.display = ok ? '' : 'none';
+      if (ok) shown++;
+    });
+    const c = document.getElementById('rowCount');
+    if (c) c.textContent = `${shown} / ${rows.length} materials`;
+  }
+  document.querySelectorAll('#statusFilter .seg-btn').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#statusFilter .seg-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active'); showMode = b.dataset.show; applyRowFilter();
+  }));
+  if (search) search.addEventListener('input', applyRowFilter);
+  applyRowFilter();
+
+  // Live-update a row when its "have" changes
+  document.addEventListener('have-changed', e => {
+    const row = document.querySelector(`.collect-row[data-item="${e.detail.item}"]`);
+    if (!row) return;
+    const need = +row.dataset.need, have = e.detail.have, missing = Math.max(0, need - have);
+    row.querySelector('.missing-cell').textContent = missing ? missing : '✓';
+    row.querySelector('.bar i').style.width = Math.min(100, Math.round(have / need * 100)) + '%';
+    row.classList.toggle('is-ready', missing === 0);
+    row.classList.toggle('is-missing', missing > 0);
+  });
+</script>
+{% endblock %}

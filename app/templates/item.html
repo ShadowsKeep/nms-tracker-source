@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import tile, chip, have_editor, recipe %}
+{% block title %}{{ it.name }}{% endblock %}
+
+{% block content %}
+<div class="crumbs"><a href="{{ url_for('pages.items') }}">Materials &amp; Recipes</a> &rsaquo; {{ it.kind_label }}</div>
+
+<header class="item-head">
+  {{ tile(it, 'xl') }}
+  <div class="item-head-body">
+    <h1>{{ it.name }}</h1>
+    <div class="item-group">{{ it.group }}{% if it.obsolete %} <span class="hint-tag warn">no longer obtainable</span>{% endif %}</div>
+    <p class="item-desc">{{ it.desc }}</p>
+    <div class="facts">
+      {% if it.value and it.currency != 'None' %}<span class="fact"><b>{{ '{:,.0f}'.format(it.value) }}</b> {{ 'units' if it.currency == 'Credits' else it.currency | lower }}</span>{% endif %}
+      {% if it.stack %}<span class="fact">stacks to <b>{{ it.stack }}</b></span>{% endif %}
+      <span class="fact">{{ made_by | length }} way{{ '' if made_by | length == 1 else 's' }} to make it</span>
+      <span class="fact">turns into {{ turns_into | length }} thing{{ '' if turns_into | length == 1 else 's' }}</span>
+    </div>
+  </div>
+  <aside class="item-actions">
+    <div class="action-label">You have</div>
+    {{ have_editor(it.id, have) }}
+    <div class="action-label">Add as goal</div>
+    <div class="goal-add">
+      <input type="number" id="goalQty" min="1" value="{{ 1 if it.requires else 250 }}" aria-label="Quantity">
+      <button class="btn primary" id="goalBtn" data-item="{{ it.id }}">Add goal</button>
+    </div>
+  </aside>
+</header>
+
+{% if crafted_from %}
+  <section class="panel">
+    <h2>{{ 'Repair cost' if it.damaged else 'Crafted from' }}</h2>
+    <div class="chip-row">
+      {% for c in crafted_from %}
+        <span class="req {{ 'ok' if stock.get(c.item.id, 0) >= c.qty else '' }}">{{ chip(c.item, c.qty) }}<span class="dim">have {{ stock.get(c.item.id, 0) }}</span></span>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% if made_by %}
+  <section class="panel">
+    <h2>How to make it <span class="dim">({{ made_by | length }} recipe{{ '' if made_by | length == 1 else 's' }})</span></h2>
+    <div class="recipes">{% for r in made_by %}{{ recipe(r) }}{% endfor %}</div>
+  </section>
+{% endif %}
+
+{% if turns_into %}
+  <section class="panel">
+    <h2>What it turns into <span class="dim">(refiner &amp; processor)</span></h2>
+    {% for o in turns_into %}
+      <details class="fold" {% if turns_into | length <= 4 %}open{% endif %}>
+        <summary>{{ tile(o.item, 'sm') }} <span>{{ o.item.name }}</span> <span class="dim">{{ o.recipes | length }} recipe{{ '' if o.recipes | length == 1 else 's' }}</span></summary>
+        <div class="recipes">{% for r in o.recipes %}{{ recipe(r) }}{% endfor %}</div>
+      </details>
+    {% endfor %}
+  </section>
+{% endif %}
+
+{% if crafts_into %}
+  <section class="panel">
+    <h2>Used to craft or repair <span class="dim">({{ crafts_into | length }})</span></h2>
+    <div class="chip-row">
+      {% for c in crafts_into %}{{ chip(c) }}{% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% if not (crafted_from or made_by or turns_into or crafts_into) %}
+  <section class="panel empty"><p>No recipes involve this item. It is found, bought or earned as-is.</p></section>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.getElementById('goalBtn').addEventListener('click', async e => {
+    const qty = parseInt(document.getElementById('goalQty').value, 10) || 1;
+    const res = await api('/api/goal', { item_id: e.target.dataset.item, qty });
+    if (res) toast(`Goal added: ${res.qty}× ${res.name}`, 'See it on the Collect List.', 'ok');
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}NMS Tracker{% endblock %} — Shadowskeep LLC</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <nav class="sidebar">
+      <div class="brand">
+        <div class="brand-mark"><i></i></div>
+        <div>
+          <div class="brand-title">NMS TRACKER</div>
+          <div class="brand-sub">Shadowskeep LLC</div>
+        </div>
+      </div>
+
+      <a class="nav-item {% if active == 'dashboard' %}active{% endif %}" href="{{ url_for('pages.dashboard') }}"><span class="nav-ico">&#9670;</span> Overview</a>
+      <a class="nav-item {% if active == 'collect' %}active{% endif %}" href="{{ url_for('pages.collect') }}"><span class="nav-ico">&#9776;</span> Collect List</a>
+      <a class="nav-item {% if active == 'goals' %}active{% endif %}" href="{{ url_for('pages.goals') }}"><span class="nav-ico">&#9873;</span> Goals</a>
+      <a class="nav-item {% if active == 'items' %}active{% endif %}" href="{{ url_for('pages.items') }}"><span class="nav-ico">&#9883;</span> Materials &amp; Recipes</a>
+      <a class="nav-item {% if active == 'ships' and not active_ship %}active{% endif %}" href="{{ url_for('pages.ships') }}"><span class="nav-ico">&#9992;</span> Ship Repairs</a>
+      <a class="nav-item {% if active == 'save' %}active{% endif %}" href="{{ url_for('pages.save_import') }}"><span class="nav-ico">&#8635;</span> Import from Save</a>
+
+      {% if nav_ships %}
+        <div class="nav-label">Your ships</div>
+        {% for s in nav_ships %}
+          <a class="nav-sub {% if active_ship == s.id %}active{% endif %}" href="{{ url_for('pages.ship', ship_id=s.id) }}">
+            <span class="nav-sub-name">{{ s.name }}</span>
+            <span class="nav-sub-count {% if s.total and s.fixed == s.total %}done{% endif %}">
+              {% if s.total and s.fixed == s.total %}&#10003;{% else %}{{ s.fixed }}/{{ s.total }}{% endif %}
+            </span>
+          </a>
+        {% endfor %}
+      {% endif %}
+
+      <div class="sidebar-foot">
+        <form action="{{ url_for('pages.items') }}" method="get" class="quick-search">
+          <input type="search" name="q" placeholder="Find any item…" autocomplete="off">
+        </form>
+      </div>
+    </nav>
+
+    <main class="main">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,103 @@
+name: Build and release
+
+# The SOURCE stays in this private repository.
+# Only the built installer + portable zip are published, to the PUBLIC repo named in
+# release.config.json ("publicRepo").
+#
+# Trigger:  push a tag like v1.2.0   (must match version_info.txt)   or run manually.
+#
+# Secrets (Settings > Secrets and variables > Actions):
+#   RELEASES_TOKEN     REQUIRED to publish. Fine-grained personal access token with
+#                      "Contents: Read and write" on the public releases repo only.
+#                      Without it the workflow still builds and keeps the files as a
+#                      private run artifact.
+#   SIGN_PFX_BASE64    optional. Base64 of a code-signing .pfx. Without it builds are unsigned.
+#   SIGN_PFX_PASSWORD  optional. Password for that .pfx.
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish to the public releases repo
+        type: boolean
+        default: true
+      draft:
+        description: Create the release as a draft
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check tag matches version_info.txt
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: pwsh
+        run: |
+          $vi = Get-Content version_info.txt -Raw
+          if ($vi -notmatch 'filevers=\((\d+),\s*(\d+),\s*(\d+)') { throw 'version not found' }
+          $v = "v$($Matches[1]).$($Matches[2]).$($Matches[3])"
+          if ($v -ne '${{ github.ref_name }}') { throw "Tag ${{ github.ref_name }} does not match version_info.txt ($v). Bump version_info.txt first." }
+
+      - name: Ensure Inno Setup
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe")) { choco install innosetup --no-progress -y }
+
+      - name: Smoke test (the app must import and serve its pages)
+        shell: pwsh
+        run: |
+          python -c "import sys, tempfile, pathlib; sys.path.insert(0, '.'); import app as a; a.get_data_dir = lambda: pathlib.Path(tempfile.mkdtemp()); c = a.create_app().test_client(); r = c.get('/'); assert r.status_code == 200, r.status_code; print('smoke test OK')"
+
+      - name: Build, sign (if configured) and package
+        shell: pwsh
+        env:
+          SIGN_PFX_BASE64: ${{ secrets.SIGN_PFX_BASE64 }}
+          SIGN_PFX_PASSWORD: ${{ secrets.SIGN_PFX_PASSWORD }}
+        run: ./tools/release.ps1
+
+      - name: Keep build as a private artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ github.ref_name }}
+          path: dist/release/*
+          retention-days: 14
+          compression-level: 0
+
+      - name: Publish to the public releases repo
+        if: ${{ github.event_name == 'push' || inputs.publish }}
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+        run: |
+          if (-not $env:GH_TOKEN) {
+            Write-Host '::warning::RELEASES_TOKEN secret is not set, so nothing was published. The build is attached to this run as an artifact.'
+            exit 0
+          }
+          $extra = @()
+          if ('${{ inputs.draft }}' -eq 'true') { $extra += '-Draft' }
+          ./tools/release.ps1 -SkipBuild -Publish @extra

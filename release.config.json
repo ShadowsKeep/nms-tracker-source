@@ -1,0 +1,11 @@
+{
+  "appName": "NMS Tracker",
+  "assetBase": "NMSTracker",
+  "spec": "nms_tracker.spec",
+  "publicRepo": "ShadowsKeep/nms-tracker",
+  "supportUrl": "https://buymeacoffee.com/fxshadowking",
+  "preBuild": [
+    "python tools/make_icon.py",
+    "python tools/build_data.py"
+  ]
+}

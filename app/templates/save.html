@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import tile, chip %}
+{% block title %}Import from Save{% endblock %}
+
+{% block content %}
+<header class="page-head">
+  <h1>Import from Save</h1>
+  <p>Reads your No Man's Sky save to fill in what you own and which ship parts are broken. The save is only ever read, never changed.</p>
+</header>
+
+{% if not saves %}
+  <section class="panel empty">
+    <h2>No save files found</h2>
+    <p>Looked in <code>{{ root }}</code>. This works with the Steam and GOG versions on this PC.</p>
+  </section>
+{% else %}
+  <section class="panel">
+    <h2>Choose a save</h2>
+    <div class="save-list">
+      {% for s in saves %}
+        <a class="save-row {% if s.path == chosen %}active{% endif %}" href="{{ url_for('pages.save_import', path=s.path) }}">
+          <span class="save-slot">Slot {{ s.slot }}</span>
+          <span class="hint-tag">{{ s.kind }}</span>
+          <span class="dim">{{ s.when }}</span>
+          {% if loop.first %}<span class="ready-tag">most recent</span>{% endif %}
+        </a>
+      {% endfor %}
+    </div>
+    <p class="dim small">The game writes a new save when you leave your ship or use a save point. Save in game, then press "Sync now".</p>
+  </section>
+
+  {% if error %}
+    <section class="panel empty"><h2>Could not read that save</h2><p>{{ error }}</p>
+      <p class="dim small">After a big game update the save format can change. Run <code>python tools\build_data.py --download</code> to refresh the key mapping.</p></section>
+  {% elif data %}
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Found in this save</h2>
+        <button class="btn primary big" id="syncBtn">Sync now</button>
+      </div>
+      <div class="facts">
+        {% if data.units is not none %}<span class="fact"><b>{{ '{:,}'.format(data.units) }}</b> units</span>{% endif %}
+        {% if data.nanites is not none %}<span class="fact"><b>{{ '{:,}'.format(data.nanites) }}</b> nanites</span>{% endif %}
+        {% if data.quicksilver is not none %}<span class="fact"><b>{{ '{:,}'.format(data.quicksilver) }}</b> quicksilver</span>{% endif %}
+        <span class="fact">saved <b>{{ data.modified.strftime('%d %b %Y %H:%M') }}</b></span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Inventory to import</h2>
+      <p class="dim">Your "You have" numbers will be set to the total of the ticked places. Items you no longer own are set to zero.</p>
+      <div class="source-grid">
+        {% for key, src in sources.items() %}
+          <label class="source-card">
+            <input type="checkbox" class="src-check" value="{{ key }}" {% if src.default %}checked{% endif %}>
+            <span class="source-name">{{ src.label }}</span>
+            <span class="dim">{{ src.count }} item type{{ '' if src.count == 1 else 's' }}</span>
+          </label>
+        {% endfor %}
+      </div>
+      <details class="fold">
+        <summary><span>Preview: everything found</span> <span class="dim">{{ preview | length }} items</span></summary>
+        <div class="chip-row">{% for p in preview %}{{ chip(p.item, p.qty) }}{% endfor %}</div>
+      </details>
+      {% if data.unmapped %}
+        <p class="dim small">Not recognised and skipped: {{ data.unmapped | join(', ') }}</p>
+      {% endif %}
+    </section>
+
+    <section class="panel">
+      <h2>Ships</h2>
+      <p class="dim">Ticked ships are added to Ship Repairs with every damaged slot. On later syncs, anything you have repaired in game is ticked off automatically.</p>
+      <div class="card-list">
+        {% for sh in ships %}
+          <label class="ship-import {% if not sh.damaged_total %}healthy{% endif %}">
+            <input type="checkbox" class="ship-check" value="{{ sh.index }}" {% if sh.damaged_total or sh.linked %}checked{% endif %} {% if not sh.damaged_total and not sh.linked %}disabled{% endif %}>
+            <div class="ship-import-body">
+              <div class="ship-name">{{ sh.name }} {% if sh.current %}<span class="hint-tag">current ship</span>{% endif %}{% if sh.linked %}<span class="hint-tag">already tracked</span>{% endif %}</div>
+              <div class="ship-meta">{{ sh.kind }} &middot;
+                {% if sh.damaged_total %}<span class="warn-text">{{ sh.damaged_total }} damaged slot{{ '' if sh.damaged_total == 1 else 's' }}</span>{% else %}no damage{% endif %}
+                {% if sh.unknown %}<span class="dim"> (+{{ sh.unknown }} damaged upgrade module{{ '' if sh.unknown == 1 else 's' }} with no fixed recipe)</span>{% endif %}
+              </div>
+              {% if sh.parts %}<div class="chip-row">{% for p in sh.parts %}{{ chip(p.item, p.qty) }}{% endfor %}</div>{% endif %}
+            </div>
+          </label>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const btn = document.getElementById('syncBtn');
+  if (btn) btn.addEventListener('click', async () => {
+    btn.disabled = true; btn.textContent = 'Syncing…';
+    const res = await api('/api/save/sync', {
+      path: {{ chosen | tojson }},
+      sources: Array.from(document.querySelectorAll('.src-check:checked')).map(c => c.value),
+      ships: Array.from(document.querySelectorAll('.ship-check:checked')).map(c => parseInt(c.value, 10)),
+    });
+    if (res) {
+      const bits = [`${res.inventory.items} materials imported`];
+      if (res.ships.created) bits.push(`${res.ships.created} ship${res.ships.created === 1 ? '' : 's'} added`);
+      if (res.ships.repairs_added) bits.push(`${res.ships.repairs_added} repairs listed`);
+      if (res.ships.repairs_fixed) bits.push(`${res.ships.repairs_fixed} repairs ticked off`);
+      sessionStorage.setItem('toast', JSON.stringify(['Synced with your save', bits.join(' · '), 'gold']));
+      location.href = '/collect';
+    } else { btn.disabled = false; btn.textContent = 'Sync now'; }
+  });
+</script>
+{% endblock %}

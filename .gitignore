@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+instance/
+build/
+dist/
+*.spec.bak
+.venv/
+venv/
+# local signing output differs per machine; release.ps1 regenerates it
+# (keep installer/cert.iss.inc and the public .cer tracked so local builds match)

@@ -1,0 +1,45 @@
+{# Item icon tile: game icon on the item's own colour, abbreviation fallback if the image fails #}
+{% macro tile(item, size='md') -%}
+  <span class="tile tile-{{ size }}" style="background:#{{ item.colour }}">
+    {%- if item.icon -%}
+      <img src="{{ item.icon }}" alt="" loading="lazy" onerror="this.remove()">
+    {%- endif -%}
+    <span class="tile-fallback">{{ item.abbrev or item.name[:2] }}</span>
+  </span>
+{%- endmacro %}
+
+{# Linked item name with tile #}
+{% macro chip(item, qty=None) -%}
+  <a class="chip" href="{{ url_for('pages.item', item_id=item.id) }}" title="{{ item.group }}">
+    {{ tile(item, 'sm') }}
+    <span class="chip-name">{{ item.name }}</span>
+    {%- if qty is not none %}<span class="chip-qty">&times;{{ qty }}</span>{% endif -%}
+  </a>
+{%- endmacro %}
+
+{# +/- inventory counter. Any element with data-have-for=<id> is kept in sync by app.js #}
+{% macro have_editor(item_id, value) -%}
+  <span class="have" data-item="{{ item_id }}">
+    <button type="button" class="have-btn" data-delta="-10" title="-10">&laquo;</button>
+    <button type="button" class="have-btn" data-delta="-1" title="-1">&minus;</button>
+    <input type="number" class="have-input" min="0" value="{{ value }}" aria-label="Amount you have">
+    <button type="button" class="have-btn" data-delta="1" title="+1">+</button>
+    <button type="button" class="have-btn" data-delta="10" title="+10">&raquo;</button>
+  </span>
+{%- endmacro %}
+
+{# One recipe: inputs -> output #}
+{% macro recipe(r) -%}
+  <div class="recipe">
+    <div class="recipe-in">
+      {% for i in r.inputs %}{{ chip(i.item, i.qty) }}{% if not loop.last %}<span class="plus">+</span>{% endif %}{% endfor %}
+    </div>
+    <span class="arrow">&#9654;</span>
+    <div class="recipe-out">{{ chip(r.output.item, r.output.qty) }}</div>
+    <div class="recipe-meta">{{ r.station }}{% if r.op %} &middot; {{ r.op }}{% endif %}</div>
+  </div>
+{%- endmacro %}
+
+{% macro bar(percent, cls='') -%}
+  <div class="bar {{ cls }}"><i style="width: {{ percent }}%"></i></div>
+{%- endmacro %}

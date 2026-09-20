@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import tile, chip, bar %}
+{% block title %}Overview{% endblock %}
+
+{% block content %}
+<header class="page-head">
+  <h1>Overview</h1>
+  <p>What you still need to gather, and how your ships are doing.</p>
+</header>
+
+<div class="stat-row">
+  <a class="stat" href="{{ url_for('pages.collect') }}">
+    <div class="stat-num {{ 'warn' if s.materials_missing else 'ok' }}">{{ s.materials_missing }}</div>
+    <div class="stat-label">materials still to collect</div>
+    <div class="stat-sub">{{ s.materials_ready }} of {{ s.materials_total }} already covered</div>
+  </a>
+  <a class="stat" href="{{ url_for('pages.goals') }}">
+    <div class="stat-num">{{ s.goals_open }}</div>
+    <div class="stat-label">open goals</div>
+    <div class="stat-sub">{{ s.goals_done }} completed</div>
+  </a>
+  <a class="stat" href="{{ url_for('pages.ships') }}">
+    <div class="stat-num {{ 'warn' if s.repairs_open else 'ok' }}">{{ s.repairs_open }}</div>
+    <div class="stat-label">ship repairs to do</div>
+    <div class="stat-sub">{{ s.repairs_done }} fixed across {{ s.ships }} ship{{ '' if s.ships == 1 else 's' }}</div>
+  </a>
+</div>
+
+{% if not s.goals_open and not s.ships %}
+  <section class="panel empty">
+    <h2>Start here</h2>
+    <ol class="steps">
+      <li><strong>Fastest: <a href="{{ url_for('pages.save_import') }}">Import from your save</a>.</strong> It fills in what you own and lists your ships' broken parts for you.</li>
+      <li><strong>Add a goal.</strong> Open <a href="{{ url_for('pages.items') }}">Materials &amp; Recipes</a>, find what you want to build, and press "Add as goal".</li>
+      <li><strong>Or add a ship.</strong> In <a href="{{ url_for('pages.ships') }}">Ship Repairs</a>, create the ship you found and tick off its broken components.</li>
+      <li><strong>Then follow the <a href="{{ url_for('pages.collect') }}">Collect List</a>.</strong> It totals every material you need and updates as you enter what you have.</li>
+    </ol>
+  </section>
+{% endif %}
+
+{% if s.top_missing %}
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Most needed right now</h2>
+      <a class="link" href="{{ url_for('pages.collect') }}">Full collect list &rarr;</a>
+    </div>
+    <div class="need-grid">
+      {% for r in s.top_missing %}
+        <a class="need-card" href="{{ url_for('pages.item', item_id=r.item.id) }}">
+          {{ tile(r.item, 'lg') }}
+          <div class="need-body">
+            <div class="need-name">{{ r.item.name }}</div>
+            <div class="need-nums"><strong>{{ r.missing }}</strong> more needed <span class="dim">({{ r.have }} / {{ r.need }})</span></div>
+            {{ bar(r.percent) }}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% if ships %}
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Ships</h2>
+      <a class="link" href="{{ url_for('pages.ships') }}">Manage ships &rarr;</a>
+    </div>
+    <div class="ship-grid">
+      {% for sh in ships %}
+        <a class="ship-card {% if sh.total and sh.fixed == sh.total %}complete{% endif %}" href="{{ url_for('pages.ship', ship_id=sh.id) }}">
+          <div class="ship-name">{{ sh.name }}</div>
+          <div class="ship-meta">{{ sh.kind or 'Starship' }}{% if sh.ship_class %} &middot; {{ sh.ship_class }}-class{% endif %}</div>
+          {{ bar(sh.percent) }}
+          <div class="ship-nums">{{ sh.fixed }}/{{ sh.total }} repaired{% if sh.total and sh.fixed == sh.total %} &middot; flight ready{% endif %}</div>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+{% endblock %}

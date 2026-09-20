@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import tile, chip %}
+{% block title %}Goals{% endblock %}
+
+{% block content %}
+<header class="page-head">
+  <h1>Goals</h1>
+  <p>Things you want to build or stockpile. Their ingredients feed the Collect List.</p>
+</header>
+
+<section class="panel">
+  <h2>Add a goal</h2>
+  <div class="picker" data-picker data-target="goal">
+    <input type="search" class="search wide picker-input" placeholder="Type an item name: warp cell, metal plating, 500 chromatic metal…" autocomplete="off">
+    <input type="number" class="picker-qty" min="1" value="1" aria-label="Quantity">
+    <button class="btn primary picker-add" disabled>Add goal</button>
+    <div class="picker-results"></div>
+  </div>
+</section>
+
+{% if not rows %}
+  <section class="panel empty"><h2>No goals yet</h2><p>Search above, or open any item in <a href="{{ url_for('pages.items') }}">Materials &amp; Recipes</a> and press "Add goal".</p></section>
+{% else %}
+  <div class="card-list">
+    {% for r in rows %}
+      <article class="goal {{ 'done' if r.goal.done }} {{ 'ready' if r.ready and not r.goal.done }}">
+        <div class="goal-main">
+          {{ tile(r.item, 'lg') }}
+          <div>
+            <a class="goal-name" href="{{ url_for('pages.item', item_id=r.item.id) }}">{{ r.goal.qty }}&times; {{ r.item.name }}</a>
+            <div class="dim">{{ r.item.group }}</div>
+            {% if r.ready and not r.goal.done %}<div class="ready-tag">You have everything for this</div>{% endif %}
+          </div>
+        </div>
+        <div class="chip-row">
+          {% for p in r.parts %}
+            <span class="req {{ 'ok' if p.ok }}">{{ chip(p.item, p.need) }}<span class="dim">have {{ p.have }}</span></span>
+          {% endfor %}
+        </div>
+        <div class="goal-actions">
+          {% if not r.goal.done %}
+            <button class="btn primary" data-goal-done="{{ r.goal.id }}" data-consume="1" title="Marks it done and removes the ingredients from your inventory">Built it (use materials)</button>
+            <button class="btn" data-goal-done="{{ r.goal.id }}" data-consume="0">Mark done</button>
+          {% else %}
+            <button class="btn" data-goal-done="{{ r.goal.id }}" data-consume="0">Reopen</button>
+          {% endif %}
+          <button class="btn danger" data-goal-delete="{{ r.goal.id }}">Remove</button>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.querySelectorAll('[data-goal-done]').forEach(b => b.addEventListener('click', async () => {
+    if (await api(`/api/goal/${b.dataset.goalDone}/toggle`, { consume: b.dataset.consume === '1' })) location.reload();
+  }));
+  document.querySelectorAll('[data-goal-delete]').forEach(b => b.addEventListener('click', async () => {
+    if (confirm('Remove this goal?') && await api(`/api/goal/${b.dataset.goalDelete}/delete`, {})) location.reload();
+  }));
+</script>
+{% endblock %}

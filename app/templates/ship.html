@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import tile, chip, bar %}
+{% block title %}{{ ship.name }}{% endblock %}
+
+{% block content %}
+<div class="crumbs"><a href="{{ url_for('pages.ships') }}">Ship Repairs</a> &rsaquo; {{ ship.name }}</div>
+
+<header class="page-head">
+  <h1>{{ ship.name }}</h1>
+  <p>{{ ship.kind or 'Starship' }}{% if ship.ship_class %} &middot; {{ ship.ship_class }}-class{% endif %}{% if ship.location %} &middot; &#9906; {{ ship.location }}{% endif %}</p>
+</header>
+
+<section class="panel">
+  <div class="panel-head">
+    <h2 id="shipProgressLabel">{{ ship.fixed }}/{{ ship.total }} repaired</h2>
+    <button class="btn danger" id="deleteShip">Delete ship</button>
+  </div>
+  <div id="shipBar">{{ bar(ship.percent, 'big') }}</div>
+</section>
+
+<section class="panel">
+  <h2>Add a broken component</h2>
+  <p class="dim">Pick the damaged slot or technology exactly as the game names it. Its repair materials go onto your Collect List.</p>
+  <div class="quick-parts">
+    {% for p in damaged %}
+      <button class="part-btn" data-add-part="{{ p.id }}" title="{% for r in p.requires %}{{ r.qty }}× {{ item_name(r.id) }}{{ ', ' if not loop.last }}{% endfor %}">
+        {{ tile(p, 'sm') }}
+        <span class="part-text"><span>{{ p.name }}</span>
+          <span class="part-cost">{% for r in p.requires %}{{ r.qty }} {{ item_name(r.id) }}{{ ' · ' if not loop.last }}{% endfor %}</span></span>
+      </button>
+    {% endfor %}
+  </div>
+  <details class="fold">
+    <summary><span>Damaged technology (engines, weapons, shields…)</span> <span class="dim">{{ tech | length }}</span></summary>
+    <div class="quick-parts">
+      {% for p in tech %}
+        <button class="part-btn" data-add-part="{{ p.id }}">{{ tile(p, 'sm') }}
+          <span class="part-text"><span>{{ p.name }}</span>
+            <span class="part-cost">{% for r in p.requires %}{{ r.qty }} {{ item_name(r.id) }}{{ ' · ' if not loop.last }}{% endfor %}</span></span></button>
+      {% endfor %}
+    </div>
+    <p class="dim small">For installed technology the app uses the full build cost. The game often asks for only part of it when repairing, so treat these as an upper limit.</p>
+  </details>
+</section>
+
+{% if not repairs %}
+  <section class="panel empty"><h2>No repairs listed</h2><p>Click the components above that are broken on this ship.</p></section>
+{% else %}
+  <div class="card-list">
+    {% for r in repairs %}
+      <article class="goal {{ 'done' if r.repair.done }} {{ 'ready' if r.ready and not r.repair.done }}" data-repair="{{ r.repair.id }}">
+        <div class="goal-main">
+          {{ tile(r.item, 'lg') }}
+          <div>
+            <a class="goal-name" href="{{ url_for('pages.item', item_id=r.item.id) }}">{{ r.item.name }}{% if r.repair.qty > 1 %} &times;{{ r.repair.qty }}{% endif %}</a>
+            <div class="dim">{{ r.item.group }}</div>
+            {% if r.repair.done %}<div class="ready-tag">Repaired</div>
+            {% elif r.ready %}<div class="ready-tag">You have everything to fix this now</div>{% endif %}
+          </div>
+        </div>
+        <div class="chip-row">
+          {% for p in r.parts %}
+            <span class="req {{ 'ok' if p.ok or r.repair.done }}">{{ chip(p.item, p.need) }}{% if not r.repair.done %}<span class="dim">have {{ p.have }}</span>{% endif %}</span>
+          {% else %}
+            <span class="dim">No material cost on record for this part.</span>
+          {% endfor %}
+        </div>
+        <div class="goal-actions">
+          {% if not r.repair.done %}
+            <button class="btn primary" data-repair-toggle="{{ r.repair.id }}" data-consume="1" title="Marks it repaired and removes the materials from your inventory">Repaired (use materials)</button>
+            <button class="btn" data-repair-toggle="{{ r.repair.id }}" data-consume="0">Mark repaired</button>
+          {% else %}
+            <button class="btn" data-repair-toggle="{{ r.repair.id }}" data-consume="0">Undo</button>
+          {% endif %}
+          <button class="btn danger" data-repair-delete="{{ r.repair.id }}">Remove</button>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<section class="panel">
+  <h2>Notes</h2>
+  <textarea id="shipNotes" class="notes" placeholder="Portal address, price, slot layout, anything worth remembering…">{{ ship.notes or '' }}</textarea>
+  <span class="dim small" id="notesState"></span>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const SHIP = {{ ship.id }};
+  document.querySelectorAll('[data-add-part]').forEach(b => b.addEventListener('click', async () => {
+    if (await api(`/api/ship/${SHIP}/repair`, { item_id: b.dataset.addPart, qty: 1 })) location.reload();
+  }));
+  document.querySelectorAll('[data-repair-toggle]').forEach(b => b.addEventListener('click', async () => {
+    const res = await api(`/api/repair/${b.dataset.repairToggle}/toggle`, { consume: b.dataset.consume === '1' });
+    if (!res) return;
+    if (res.done && res.ship_complete) {
+      sessionStorage.setItem('toast', JSON.stringify(['Flight ready!', `${res.ship_name} is fully repaired.`, 'gold']));
+    }
+    location.reload();
+  }));
+  document.querySelectorAll('[data-repair-delete]').forEach(b => b.addEventListener('click', async () => {
+    if (await api(`/api/repair/${b.dataset.repairDelete}/delete`, {})) location.reload();
+  }));
+  document.getElementById('deleteShip').addEventListener('click', async () => {
+    if (confirm('Delete this ship and all its repairs?') && await api(`/api/ship/${SHIP}/delete`, {})) location.href = '/ships';
+  });
+  let notesTimer;
+  document.getElementById('shipNotes').addEventListener('input', e => {
+    clearTimeout(notesTimer);
+    document.getElementById('notesState').textContent = 'Saving…';
+    notesTimer = setTimeout(async () => {
+      const ok = await api(`/api/ship/${SHIP}/update`, { notes: e.target.value });
+      document.getElementById('notesState').textContent = ok ? 'Saved' : 'Could not save';
+    }, 700);
+  });
+</script>
+{% endblock %}

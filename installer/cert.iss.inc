@@ -1,0 +1,2 @@
+#define CertThumb "F4EC113816FBD73AFF83E1FF151777D8C3619998"
+#define CertSelfSigned 1

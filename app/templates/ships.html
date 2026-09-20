@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import bar %}
+{% block title %}Ship Repairs{% endblock %}
+
+{% block content %}
+<header class="page-head">
+  <h1>Ship Repairs</h1>
+  <p>Add each crashed or damaged ship, list what is broken, and tick repairs off as you go.</p>
+</header>
+
+<section class="panel">
+  <h2>Add a ship</h2>
+  <form id="shipForm" class="form-row">
+    <input type="text" name="name" class="search" placeholder="Ship name, e.g. Radiant Pillar BC1" required maxlength="120">
+    <select name="kind" aria-label="Ship type">
+      <option value="">Type…</option>
+      {% for k in ship_kinds %}<option>{{ k }}</option>{% endfor %}
+    </select>
+    <select name="ship_class" aria-label="Class">
+      <option value="">Class…</option>
+      {% for c in ship_classes %}<option>{{ c }}</option>{% endfor %}
+    </select>
+    <input type="text" name="location" class="search" placeholder="Where is it? (planet / system / coordinates)" maxlength="200">
+    <button class="btn primary" type="submit">Add ship</button>
+  </form>
+</section>
+
+{% if not ships %}
+  <section class="panel empty"><h2>No ships yet</h2><p>Found a crashed ship? Add it above, then list its broken components.</p></section>
+{% else %}
+  <div class="ship-grid">
+    {% for sh in ships %}
+      <a class="ship-card {% if sh.total and sh.fixed == sh.total %}complete{% endif %}" href="{{ url_for('pages.ship', ship_id=sh.id) }}">
+        <div class="ship-name">{{ sh.name }}</div>
+        <div class="ship-meta">{{ sh.kind or 'Starship' }}{% if sh.ship_class %} &middot; {{ sh.ship_class }}-class{% endif %}</div>
+        {% if sh.location %}<div class="ship-meta dim">&#9906; {{ sh.location }}</div>{% endif %}
+        {{ bar(sh.percent) }}
+        <div class="ship-nums">
+          {% if not sh.total %}No repairs listed yet
+          {% elif sh.fixed == sh.total %}All {{ sh.total }} repairs done &middot; flight ready
+          {% else %}{{ sh.fixed }}/{{ sh.total }} repaired{% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.getElementById('shipForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    const res = await api('/api/ship', data);
+    if (res) location.href = `/ship/${res.id}`;
+  });
+</script>
+{% endblock %}
