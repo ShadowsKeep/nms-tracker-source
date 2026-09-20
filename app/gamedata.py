@@ -16,10 +16,22 @@ KIND_LABELS = {
 STATION_LABELS = {'refiner': 'Refiner', 'cooking': 'Nutrient Processor'}
 
 
-def _data_file() -> Path:
+def _data_file(name='gamedata.json') -> Path:
     if getattr(sys, 'frozen', False):
-        return Path(sys._MEIPASS) / 'app' / 'data' / 'gamedata.json'  # type: ignore[attr-defined]
-    return Path(__file__).parent / 'data' / 'gamedata.json'
+        return Path(sys._MEIPASS) / 'app' / 'data' / name  # type: ignore[attr-defined]
+    return Path(__file__).parent / 'data' / name
+
+
+# words in a wiki "Sources" note that mean you can simply pay for the thing
+_BUY_WORDS = ('trade terminal', 'purchas', 'bought', 'buy ', 'for sale', 'sold ')
+
+
+def _wiki_notes() -> dict:
+    """Where-to-find notes from the NMS wiki (tools/build_wiki.py). Optional file."""
+    try:
+        return json.loads(_data_file('wiki.json').read_text(encoding='utf-8'))['items']
+    except (OSError, ValueError, KeyError):
+        return {}
 
 
 class GameData:
@@ -36,8 +48,15 @@ class GameData:
         for it in self.items.values():
             for req in it['requires']:
                 self.crafts_into[req['id']].append(it)
+        notes = _wiki_notes()
         for it in self.items.values():
             it['kind_label'] = KIND_LABELS.get(it['kind'], it['kind'])
+            wiki = it['wiki'] = notes.get(it['id'])
+            # "hard to find": the wiki calls it rare, or it can only be found (not bought or made)
+            text = ' '.join(s['text'] for s in wiki['sources']).lower() if wiki else ''
+            makeable = bool(it['requires'] or self.made_by.get(it['id']))
+            it['hard'] = bool(wiki) and not makeable and wiki['rarity'] != 'Common' and (wiki['rarity'] == 'Rare' or (
+                bool(text) and not any(w in text for w in _BUY_WORDS)))
             it['search'] = (it['name'] + ' ' + it['group']).lower()
         # game id (as written in save files) -> item; materials win over lookalike entries
         rank = {'raw': 0, 'product': 1, 'trade': 2, 'curiosity': 3, 'tech': 4}

@@ -1,6 +1,6 @@
 from flask import Blueprint, abort, jsonify, request
 
-from app import db, savefile, saveimport, services
+from app import db, live, savefile, saveimport, services
 from app.gamedata import game
 from app.models import Goal, Repair, Ship
 
@@ -127,23 +127,38 @@ def add_repair(ship_id):
     ship = db.get_or_404(Ship, ship_id)
     data = _body()
     item = _item_or_404(data.get('item_id'))
-    rep = Repair(ship_id=ship.id, item_id=item['id'], qty=_qty(data.get('qty'), top=60))
-    db.session.add(rep)
+    qty = _qty(data.get('qty'), top=60)
+    # another broken slot of a part already listed just raises its count
+    rep = next((r for r in ship.repairs if r.item_id == item['id'] and not r.done), None)
+    if rep is None:
+        rep = Repair(ship_id=ship.id, item_id=item['id'], qty=qty)
+        db.session.add(rep)
+    else:
+        rep.qty = min(60, rep.qty + qty)
     db.session.commit()
-    return jsonify({'id': rep.id})
+    return jsonify({'id': rep.id, 'qty': rep.qty})
 
 
-@api_bp.route('/repair/<int:repair_id>/toggle', methods=['POST'])
-def toggle_repair(repair_id):
+@api_bp.route('/repair/<int:repair_id>/fix', methods=['POST'])
+def fix_repair(repair_id):
+    """Tick damaged slots off one at a time: {'delta': 1} or an absolute {'fixed': n}."""
     rep = db.get_or_404(Repair, repair_id)
-    rep.done = not rep.done
+    data = _body()
+    before = rep.fixed
+    try:
+        target = int(data['fixed']) if 'fixed' in data else before + int(data.get('delta', 1))
+    except (TypeError, ValueError):
+        abort(400)
+    rep.set_fixed(target)
     db.session.commit()
-    if rep.done and _body().get('consume'):
+    gained = rep.fixed - before
+    if gained > 0 and data.get('consume'):
         item = game().get(rep.item_id)
-        services.consume([(r['id'], r['qty'] * rep.qty) for r in (item['requires'] if item else [])])
+        services.consume([(r['id'], r['qty'] * gained) for r in (item['requires'] if item else [])])
     ship = rep.ship
-    return jsonify({'id': rep.id, 'done': rep.done, 'ship_fixed': ship.fixed, 'ship_total': ship.total,
-                    'ship_complete': ship.total > 0 and ship.fixed == ship.total, 'ship_name': ship.name})
+    return jsonify({'id': rep.id, 'fixed': rep.fixed, 'qty': rep.qty, 'done': rep.done,
+                    'ship_fixed': ship.fixed, 'ship_total': ship.total,
+                    'ship_complete': gained > 0 and ship.fixed == ship.total, 'ship_name': ship.name})
 
 
 @api_bp.route('/repair/<int:repair_id>/delete', methods=['POST'])
@@ -166,7 +181,23 @@ def save_sync():
         abort(422)
     sources = [s for s in (data.get('sources') or []) if s in saveimport.SOURCES]
     ships = {int(i) for i in (data.get('ships') or []) if str(i).lstrip('-').isdigit()}
-    return jsonify({
+    result = {
         'inventory': saveimport.sync_inventory(parsed, sources) if sources else {'items': 0, 'changed': 0},
         'ships': saveimport.sync_ships(parsed, path, ships),
-    })
+    }
+    if 'auto' in data:                   # "keep in sync" tick box on the import page
+        live.enable(path, sources) if data['auto'] else live.disable()
+    return jsonify(result)
+
+
+# ── live sync ───────────────────────────────────────────────────────────────
+@api_bp.route('/live', methods=['POST'])
+def live_poll():
+    """Polled by every page. Pulls in a newer save when live sync is on."""
+    return jsonify(live.poll())
+
+
+@api_bp.route('/live/off', methods=['POST'])
+def live_off():
+    live.disable()
+    return jsonify({'status': 'ok'})

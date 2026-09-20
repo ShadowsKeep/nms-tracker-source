@@ -308,3 +308,26 @@ select option { background: var(--bg-2); }
 .ship-import-body { flex: 1; min-width: 0; }
 .warn-text { color: var(--accent-2); font-weight: 700; }
 code { font-family: Consolas, monospace; font-size: .85em; color: var(--teal); }
+
+/* ── Live sync + per-slot repair progress ─────────────────────────────── */
+.live-tag { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); text-decoration: none; }
+.live-tag i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.live-tag.on { color: var(--teal); }
+.live-tag.on i { background: var(--teal); box-shadow: 0 0 8px var(--teal); animation: live-pulse 2s ease-in-out infinite; }
+@keyframes live-pulse { 50% { opacity: .35; } }
+.sync-controls { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+.live-check { display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 600; }
+.live-check input { width: 18px; height: 18px; accent-color: var(--teal); }
+.slot-progress { display: flex; align-items: center; gap: 10px; margin-top: 4px; font-weight: 700; color: var(--teal); }
+.slot-progress .bar { flex: 1 1 60px; min-width: 60px; max-width: 140px; }
+.slot-progress span { white-space: nowrap; }
+.goal-main > div { min-width: 0; }   /* long "Name ×4" wraps instead of running into the materials */
+
+/* ── Where-to-find notes (NMS wiki) ───────────────────────────────────── */
+.where { margin-top: 6px; max-width: 360px; }
+.where summary { cursor: pointer; color: var(--teal); font-size: 14px; font-weight: 700; letter-spacing: .04em; }
+.where-list { margin: 6px 0 4px; padding-left: 20px; display: grid; gap: 4px; line-height: 1.35; }
+.where-list li.sub { margin-left: 18px; color: var(--dim); }
+.where .where-list { font-size: 15px; }
+.where-link { font-size: 13px; color: var(--dim); }
+.where-link:hover { color: var(--teal); }

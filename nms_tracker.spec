@@ -17,6 +17,7 @@ a = Analysis(
         ('app/static',    'app/static'),
         ('app/data/gamedata.json', 'app/data'),
         ('app/data/save_mapping.json', 'app/data'),
+        ('app/data/wiki.json', 'app/data'),
     ],
     hiddenimports=[
         'PyQt6.sip',

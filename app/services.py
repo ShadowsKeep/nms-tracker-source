@@ -37,8 +37,8 @@ def requirement_lines():
         lines.append((goal.item_id, goal.qty, f'Goal: {goal.qty}× {g.name(goal.item_id)}'))
     for rep in Repair.query.filter_by(done=False).join(Ship).all():
         item = g.get(rep.item_id)
-        if item and item['requires']:
-            lines.append((rep.item_id, rep.qty, f'{rep.ship.name}: {item["name"]}'))
+        if item and item['requires'] and rep.remaining:
+            lines.append((rep.item_id, rep.remaining, f'{rep.ship.name}: {item["name"]}'))
     return lines
 
 
@@ -84,15 +84,24 @@ def summary():
 
 
 def repair_status(repair, have):
-    """Can this repair be done right now with what is in the inventory?"""
+    """Can this repair be done right now with what is in the inventory?
+
+    Materials are counted for the slots still broken, so fixing one of four drops the need
+    to three lots. `can_fix` is how many of those slots the inventory covers today.
+    """
     g = game()
     item = g.get(repair.item_id)
+    slots = repair.remaining or repair.qty      # a finished repair shows what it cost in full
     parts = []
     ready = True
+    can_fix = repair.remaining
     for req in (item['requires'] if item else []):
-        need = req['qty'] * repair.qty
+        need = req['qty'] * slots
         owned = have.get(req['id'], 0)
         ok = owned >= need
         ready = ready and ok
+        if req['qty'] > 0:
+            can_fix = min(can_fix, owned // req['qty'])
         parts.append({'item': g.get(req['id']), 'need': need, 'have': owned, 'ok': ok})
-    return {'repair': repair, 'item': item, 'parts': parts, 'ready': ready and bool(parts)}
+    return {'repair': repair, 'item': item, 'parts': parts, 'ready': ready and bool(parts),
+            'can_fix': can_fix if parts else 0}

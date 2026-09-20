@@ -2,7 +2,7 @@ from flask import Blueprint, abort, render_template, request
 
 from datetime import datetime
 
-from app import db, savefile, saveimport, services
+from app import db, live, savefile, saveimport, services
 from app.gamedata import KIND_LABELS, game
 from app.models import Goal, Ship
 
@@ -16,7 +16,10 @@ SHIP_CLASSES = ['C', 'B', 'A', 'S']
 @pages_bp.app_context_processor
 def inject_nav():
     ships = Ship.query.order_by(Ship.created_at).all()
-    return {'nav_ships': ships, 'kind_labels': KIND_LABELS, 'item_name': game().name}
+    cfg = live.config()
+    # live_known: the owner has made a choice before, so an "off" is respected on the import page
+    return {'nav_ships': ships, 'kind_labels': KIND_LABELS, 'item_name': game().name,
+            'live_rev': live.rev(), 'live_on': bool(cfg.get('enabled')), 'live_known': bool(cfg)}
 
 
 @pages_bp.route('/')
@@ -82,11 +85,22 @@ def ships():
                            ship_kinds=SHIP_KINDS, ship_classes=SHIP_CLASSES, active='ships')
 
 
+def _repair_rows(sh):
+    have = services.stock()
+    return [services.repair_status(r, have) for r in sh.repairs]
+
+
+@pages_bp.route('/ship/<int:ship_id>/repairs')
+def ship_repairs(ship_id):
+    """Just the repair cards, so the ship page can refresh itself without reloading."""
+    sh = db.get_or_404(Ship, ship_id)
+    return render_template('_repairs.html', ship=sh, repairs=_repair_rows(sh))
+
+
 @pages_bp.route('/ship/<int:ship_id>')
 def ship(ship_id):
     sh = db.get_or_404(Ship, ship_id)
-    have = services.stock()
-    repairs = [services.repair_status(r, have) for r in sh.repairs]
+    repairs = _repair_rows(sh)
     g = game()
     damaged = [p for p in g.ship_parts if p['group'] == 'Damaged Starship Component']
     tech = [p for p in g.ship_parts if p['group'] != 'Damaged Starship Component' and p['requires']]
@@ -117,9 +131,8 @@ def save_import():
         everything = saveimport.combined(data, list(saveimport.SOURCES))
         preview = sorted(({'item': g.get(i), 'qty': q} for i, q in everything.items()),
                          key=lambda r: (r['item']['kind'] != 'raw', r['item']['name']))
-        linked = {sh.save_key for sh in Ship.query.filter(Ship.save_key.isnot(None)).all()}
         for sh in data['ships']:
-            ships.append(dict(sh, linked=f"{chosen}#{sh['index']}" in linked,
+            ships.append(dict(sh, linked=saveimport.linked_ship(chosen, sh['index']) is not None,
                               parts=[{'item': g.get(i), 'qty': q} for i, q in sh['damaged'].items()]))
         ships.sort(key=lambda x: (not x['current'], -x['damaged_total']))
     return render_template('save.html', saves=saves, chosen=chosen, data=data, error=error, sources=sources,

@@ -18,6 +18,7 @@
   </div>
 </section>
 
+<div id="goalsZone" data-live>
 {% if not rows %}
   <section class="panel empty"><h2>No goals yet</h2><p>Search above, or open any item in <a href="{{ url_for('pages.items') }}">Materials &amp; Recipes</a> and press "Add goal".</p></section>
 {% else %}
@@ -50,15 +51,20 @@
     {% endfor %}
   </div>
 {% endif %}
+</div>
 {% endblock %}
 
 {% block scripts %}
 <script>
-  document.querySelectorAll('[data-goal-done]').forEach(b => b.addEventListener('click', async () => {
-    if (await api(`/api/goal/${b.dataset.goalDone}/toggle`, { consume: b.dataset.consume === '1' })) location.reload();
-  }));
-  document.querySelectorAll('[data-goal-delete]').forEach(b => b.addEventListener('click', async () => {
-    if (confirm('Remove this goal?') && await api(`/api/goal/${b.dataset.goalDelete}/delete`, {})) location.reload();
-  }));
+  // delegated: the goal cards are replaced in place when the save syncs or a goal changes
+  document.addEventListener('click', async e => {
+    const done = e.target.closest('[data-goal-done]');
+    const del = e.target.closest('[data-goal-delete]');
+    if (done) {
+      if (await api(`/api/goal/${done.dataset.goalDone}/toggle`, { consume: done.dataset.consume === '1' })) softRefresh();
+    } else if (del) {
+      if (confirm('Remove this goal?') && await api(`/api/goal/${del.dataset.goalDelete}/delete`, {})) softRefresh();
+    }
+  });
 </script>
 {% endblock %}

@@ -43,41 +43,7 @@
   </details>
 </section>
 
-{% if not repairs %}
-  <section class="panel empty"><h2>No repairs listed</h2><p>Click the components above that are broken on this ship.</p></section>
-{% else %}
-  <div class="card-list">
-    {% for r in repairs %}
-      <article class="goal {{ 'done' if r.repair.done }} {{ 'ready' if r.ready and not r.repair.done }}" data-repair="{{ r.repair.id }}">
-        <div class="goal-main">
-          {{ tile(r.item, 'lg') }}
-          <div>
-            <a class="goal-name" href="{{ url_for('pages.item', item_id=r.item.id) }}">{{ r.item.name }}{% if r.repair.qty > 1 %} &times;{{ r.repair.qty }}{% endif %}</a>
-            <div class="dim">{{ r.item.group }}</div>
-            {% if r.repair.done %}<div class="ready-tag">Repaired</div>
-            {% elif r.ready %}<div class="ready-tag">You have everything to fix this now</div>{% endif %}
-          </div>
-        </div>
-        <div class="chip-row">
-          {% for p in r.parts %}
-            <span class="req {{ 'ok' if p.ok or r.repair.done }}">{{ chip(p.item, p.need) }}{% if not r.repair.done %}<span class="dim">have {{ p.have }}</span>{% endif %}</span>
-          {% else %}
-            <span class="dim">No material cost on record for this part.</span>
-          {% endfor %}
-        </div>
-        <div class="goal-actions">
-          {% if not r.repair.done %}
-            <button class="btn primary" data-repair-toggle="{{ r.repair.id }}" data-consume="1" title="Marks it repaired and removes the materials from your inventory">Repaired (use materials)</button>
-            <button class="btn" data-repair-toggle="{{ r.repair.id }}" data-consume="0">Mark repaired</button>
-          {% else %}
-            <button class="btn" data-repair-toggle="{{ r.repair.id }}" data-consume="0">Undo</button>
-          {% endif %}
-          <button class="btn danger" data-repair-delete="{{ r.repair.id }}">Remove</button>
-        </div>
-      </article>
-    {% endfor %}
-  </div>
-{% endif %}
+{% include '_repairs.html' %}
 
 <section class="panel">
   <h2>Notes</h2>
@@ -89,20 +55,44 @@
 {% block scripts %}
 <script>
   const SHIP = {{ ship.id }};
-  document.querySelectorAll('[data-add-part]').forEach(b => b.addEventListener('click', async () => {
-    if (await api(`/api/ship/${SHIP}/repair`, { item_id: b.dataset.addPart, qty: 1 })) location.reload();
-  }));
-  document.querySelectorAll('[data-repair-toggle]').forEach(b => b.addEventListener('click', async () => {
-    const res = await api(`/api/repair/${b.dataset.repairToggle}/toggle`, { consume: b.dataset.consume === '1' });
-    if (!res) return;
-    if (res.done && res.ship_complete) {
-      sessionStorage.setItem('toast', JSON.stringify(['Flight ready!', `${res.ship_name} is fully repaired.`, 'gold']));
+  // Repairs update in place: after every change only the cards are fetched again.
+  async function refreshRepairs() {
+    const res = await fetch(`/ship/${SHIP}/repairs`);
+    if (!res.ok) return location.reload();
+    const box = document.createElement('div');
+    box.innerHTML = await res.text();
+    const fresh = box.querySelector('#repairList');
+    document.getElementById('repairList').replaceWith(fresh);
+    const { fixed, total, percent } = fresh.dataset;
+    document.getElementById('shipProgressLabel').textContent = `${fixed}/${total} repaired`;
+    document.querySelector('#shipBar .bar i').style.width = percent + '%';
+    const count = document.querySelector(`[data-ship-count="${SHIP}"]`);
+    if (count) {
+      const complete = +total > 0 && fixed === total;
+      count.classList.toggle('done', complete);
+      count.textContent = complete ? '✓' : `${fixed}/${total}`;
     }
-    location.reload();
-  }));
-  document.querySelectorAll('[data-repair-delete]').forEach(b => b.addEventListener('click', async () => {
-    if (await api(`/api/repair/${b.dataset.repairDelete}/delete`, {})) location.reload();
-  }));
+  }
+  window.liveRefresh = refreshRepairs;   // app.js calls this when a newer save was synced
+
+  document.addEventListener('click', async e => {
+    const add = e.target.closest('[data-add-part]');
+    const fix = e.target.closest('[data-repair-fix]');
+    const del = e.target.closest('[data-repair-delete]');
+    if (add) {
+      if (await api(`/api/ship/${SHIP}/repair`, { item_id: add.dataset.addPart, qty: 1 })) refreshRepairs();
+    } else if (fix) {
+      const body = { consume: fix.dataset.consume === '1' };
+      if (fix.dataset.fixed) body.fixed = +fix.dataset.fixed; else body.delta = +fix.dataset.delta;
+      fix.disabled = true;
+      const res = await api(`/api/repair/${fix.dataset.repairFix}/fix`, body);
+      if (!res) { fix.disabled = false; return; }
+      if (res.ship_complete) toast('Flight ready!', `${res.ship_name} is fully repaired.`, 'gold');
+      refreshRepairs();
+    } else if (del) {
+      if (await api(`/api/repair/${del.dataset.repairDelete}/delete`, {})) refreshRepairs();
+    }
+  });
   document.getElementById('deleteShip').addEventListener('click', async () => {
     if (confirm('Delete this ship and all its repairs?') && await api(`/api/ship/${SHIP}/delete`, {})) location.href = '/ships';
   });

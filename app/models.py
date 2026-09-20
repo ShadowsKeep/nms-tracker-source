@@ -46,7 +46,7 @@ class Ship(db.Model):
 
     @property
     def fixed(self):
-        return sum(r.qty for r in self.repairs if r.done)
+        return sum(min(r.fixed or 0, r.qty) for r in self.repairs)
 
     @property
     def percent(self):
@@ -59,6 +59,22 @@ class Repair(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     ship_id = db.Column(db.Integer, db.ForeignKey('ships.id'), nullable=False)
     item_id = db.Column(db.String(40), nullable=False)   # the damaged component / technology
-    qty = db.Column(db.Integer, nullable=False, default=1)
-    done = db.Column(db.Boolean, nullable=False, default=False)
+    qty = db.Column(db.Integer, nullable=False, default=1)      # damaged slots of this kind
+    fixed = db.Column(db.Integer, nullable=False, default=0)    # how many of them are repaired
+    done = db.Column(db.Boolean, nullable=False, default=False)  # kept equal to fixed >= qty
     created_at = db.Column(db.DateTime(timezone=True), default=utcnow)
+
+    @property
+    def remaining(self):
+        return max(0, self.qty - (self.fixed or 0))
+
+    def set_fixed(self, value: int):
+        self.fixed = max(0, min(int(value), self.qty))
+        self.done = self.fixed >= self.qty
+
+
+class Setting(db.Model):
+    """Small key/value store (JSON text), e.g. the live-sync configuration."""
+    __tablename__ = 'settings'
+    key = db.Column(db.String(60), primary_key=True)
+    value = db.Column(db.Text, nullable=False, default='')

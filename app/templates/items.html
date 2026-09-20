@@ -23,6 +23,7 @@
   <span class="count">{{ results | length }}{{ '+' if results | length >= 120 else '' }} shown</span>
 </div>
 
+<div id="itemsZone" data-live>
 {% if not results %}
   <section class="panel empty"><h2>No items match "{{ q }}"</h2><p>Try a shorter word, or switch to "Everything".</p></section>
 {% else %}
@@ -33,10 +34,12 @@
         <div class="item-card-body">
           <div class="item-card-name">{{ it.name }}</div>
           <div class="item-card-group">{{ it.group or it.kind_label }}</div>
+          {% if it.hard %}<span class="hint-tag warn">hard to find</span>{% endif %}
           {% if have.get(it.id) %}<div class="item-card-have">You have {{ have.get(it.id) }}</div>{% endif %}
         </div>
       </a>
     {% endfor %}
   </div>
 {% endif %}
+</div>
 {% endblock %}

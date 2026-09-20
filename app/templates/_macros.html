@@ -40,6 +40,17 @@
   </div>
 {%- endmacro %}
 
+{# Where-to-find notes from the NMS wiki. `limit` keeps table rows short; the item page shows all. #}
+{% macro where(item, limit=None) -%}
+  {% set w = item.wiki %}
+  {% if w and w.sources %}
+    <ul class="where-list">
+      {% for s in (w.sources[:limit] if limit else w.sources) %}<li class="{{ 'sub' if s.sub }}">{{ s.text }}</li>{% endfor %}
+    </ul>
+    <a class="where-link" href="{{ w.url }}" target="_blank" rel="noopener">{{ 'More on' if limit and w.sources | length > limit else 'From' }} the No Man's Sky Wiki &#8599;</a>
+  {% endif %}
+{%- endmacro %}
+
 {% macro bar(percent, cls='') -%}
   <div class="bar {{ cls }}"><i style="width: {{ percent }}%"></i></div>
 {%- endmacro %}

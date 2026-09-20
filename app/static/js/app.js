@@ -39,6 +39,59 @@ function toast(title, text, tone) {
   } catch (e) { /* ignore */ }
 })();
 
+/* ── Live sync ──────────────────────────────────────────────────────────── */
+// Ask the app every few seconds whether the game wrote a newer save. When it did, the
+// server has already synced it; this page only needs to show the new numbers.
+let liveRev = typeof LIVE_REV === 'number' ? LIVE_REV : 0;
+async function livePoll() {
+  let res;
+  try {
+    const r = await fetch('/api/live', { method: 'POST', headers: API_HEADERS, body: '{}' });
+    if (!r.ok) return;
+    res = await r.json();
+  } catch (e) { return; }               // app is closing; stay quiet
+  if (!res.enabled || res.rev === liveRev) return;
+  const note = ['Synced from your save', res.note, 'gold'];
+  // do not change a number under someone who is typing it; try again on the next poll
+  const el = document.activeElement;
+  const typing = el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA');
+  if (typing && el.closest('[data-live]')) return;
+  if (typeof window.liveRefresh === 'function') {            // the page knows how to update itself
+    liveRev = res.rev;
+    await window.liveRefresh();
+    toast(...note);
+  } else if (document.querySelector('.main [data-live]')) {  // swap just the live parts of the page
+    liveRev = res.rev;
+    await softRefresh();
+    toast(...note);
+  } else if (!typing) {
+    sessionStorage.setItem('toast', JSON.stringify(note));
+    location.reload();
+  }
+}
+setInterval(livePoll, 4000);
+
+/**
+ * Re-render this page on the server and swap in every element marked data-live (matched by id).
+ * Filters, scroll position and anything being typed elsewhere on the page are left alone.
+ * Handlers inside live zones must be delegated from document, because the elements are replaced.
+ */
+async function softRefresh() {
+  let html;
+  try {
+    const r = await fetch(location.href, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+    if (!r.ok) return;
+    html = await r.text();
+  } catch (e) { return; }
+  const fresh = new DOMParser().parseFromString(html, 'text/html');
+  document.dispatchEvent(new CustomEvent('live-before'));
+  document.querySelectorAll('[data-live][id]').forEach(zone => {
+    const next = fresh.getElementById(zone.id);
+    if (next) zone.replaceWith(document.importNode(next, true));
+  });
+  document.dispatchEvent(new CustomEvent('live-refreshed'));
+}
+
 /* ── Inventory counters ─────────────────────────────────────────────────── */
 const haveTimers = {};
 function pushHave(itemId, value, box) {
@@ -52,26 +105,36 @@ function pushHave(itemId, value, box) {
     box.classList.add('saved');
     setTimeout(() => box.classList.remove('saved'), 600);
     document.dispatchEvent(new CustomEvent('have-changed', { detail: { item: itemId, have: res.have } }));
+    // Owning more of a crafted part changes what its ingredients need, so re-work the whole
+    // Collect List once the clicking or typing has stopped.
+    delete haveTimers[itemId];
+    const el = document.activeElement;
+    const typing = el && el.tagName === 'INPUT';
+    if (document.getElementById('collectZone') && !typing && !Object.keys(haveTimers).length) softRefresh();
   }, 350);
 }
 
-document.querySelectorAll('.have').forEach(box => {
-  const input = box.querySelector('.have-input');
-  const id = box.dataset.item;
-  const clamp = v => Math.max(0, Math.min(9999999, isNaN(v) ? 0 : v));
-  box.querySelectorAll('.have-btn').forEach(btn => btn.addEventListener('click', e => {
-    e.preventDefault();
-    input.value = clamp(parseInt(input.value, 10) + parseInt(btn.dataset.delta, 10));
-    pushHave(id, +input.value, box);
-    // update the row immediately; the server confirms a moment later
-    document.dispatchEvent(new CustomEvent('have-changed', { detail: { item: id, have: +input.value } }));
-  }));
-  input.addEventListener('input', () => {
-    const v = clamp(parseInt(input.value, 10));
-    pushHave(id, v, box);
-    document.dispatchEvent(new CustomEvent('have-changed', { detail: { item: id, have: v } }));
-  });
-  input.addEventListener('focus', () => input.select());
+// Delegated from document: counters inside live zones are replaced when the save syncs.
+const clampHave = v => Math.max(0, Math.min(9999999, isNaN(v) ? 0 : v));
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.have-btn');
+  if (!btn) return;
+  e.preventDefault();
+  const box = btn.closest('.have'), input = box.querySelector('.have-input'), id = box.dataset.item;
+  input.value = clampHave(parseInt(input.value, 10) + parseInt(btn.dataset.delta, 10));
+  pushHave(id, +input.value, box);
+  // update the row immediately; the server confirms a moment later
+  document.dispatchEvent(new CustomEvent('have-changed', { detail: { item: id, have: +input.value } }));
+});
+document.addEventListener('input', e => {
+  if (!e.target.classList || !e.target.classList.contains('have-input')) return;
+  const box = e.target.closest('.have'), id = box.dataset.item;
+  const v = clampHave(parseInt(e.target.value, 10));
+  pushHave(id, v, box);
+  document.dispatchEvent(new CustomEvent('have-changed', { detail: { item: id, have: v } }));
+});
+document.addEventListener('focusin', e => {
+  if (e.target.classList && e.target.classList.contains('have-input')) e.target.select();
 });
 
 /* ── Item picker (type-ahead) ───────────────────────────────────────────── */

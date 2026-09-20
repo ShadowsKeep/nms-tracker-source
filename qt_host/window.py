@@ -28,7 +28,7 @@ from PyQt6.QtWebEngineCore import (
 
 APP_NAME = 'NMS Tracker'
 COMPANY  = 'Shadowskeep LLC'
-VERSION  = '1.0.0'
+VERSION  = '1.1.0'
 
 # Everything in the web UI is rendered 25% larger than authored.
 UI_ZOOM = 1.25

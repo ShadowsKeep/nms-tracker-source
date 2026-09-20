@@ -1,5 +1,5 @@
 # NMS Tracker
-**Publisher:** Shadowskeep LLC · **Version:** 1.0.0
+**Publisher:** Shadowskeep LLC · **Version:** 1.1.0
 
 A desktop companion for No Man's Sky: track the materials you need, see what everything
 turns into, and work through ship repairs.
@@ -79,4 +79,8 @@ nms-tracker/
   That is fine for personal use. If you distribute this app, the GPL terms of that data apply.
 - Save-file key names come from MBINCompiler's `mapping.json` (github.com/monkeyman192/MBINCompiler).
 - No Man's Sky is © Hello Games. This is an unofficial fan tool.
+- "Where to find it" notes and rarity come from the community **No Man's Sky Wiki**
+  (nomanssky.fandom.com, text licensed CC BY-SA 3.0). `python tools/build_wiki.py` fetches them
+  into `app/data/wiki.json`; the app links back to each wiki page as attribution. If you
+  distribute the app, that text stays under CC BY-SA.
 - Font: Rajdhani (SIL Open Font License, see `app/static/fonts/OFL.txt`).

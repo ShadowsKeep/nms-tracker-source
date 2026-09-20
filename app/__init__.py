@@ -33,6 +33,12 @@ def _migrate_schema():
     if 'save_key' not in cols:
         with db.engine.begin() as conn:
             conn.execute(text('ALTER TABLE ships ADD COLUMN save_key VARCHAR(400)'))
+    cols = {c['name'] for c in inspect(db.engine).get_columns('repairs')}
+    if 'fixed' not in cols:
+        # repairs used to be all-or-nothing; a finished one had every slot fixed
+        with db.engine.begin() as conn:
+            conn.execute(text('ALTER TABLE repairs ADD COLUMN fixed INTEGER NOT NULL DEFAULT 0'))
+            conn.execute(text('UPDATE repairs SET fixed = qty WHERE done = 1'))
 
 
 def create_app() -> Flask:

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% from '_macros.html' import tile, chip, have_editor, recipe %}
+{% from '_macros.html' import tile, chip, have_editor, recipe, where %}
 {% block title %}{{ it.name }}{% endblock %}
 
 {% block content %}
@@ -9,7 +9,7 @@
   {{ tile(it, 'xl') }}
   <div class="item-head-body">
     <h1>{{ it.name }}</h1>
-    <div class="item-group">{{ it.group }}{% if it.obsolete %} <span class="hint-tag warn">no longer obtainable</span>{% endif %}</div>
+    <div class="item-group">{{ it.group }}{% if it.obsolete %} <span class="hint-tag warn">no longer obtainable</span>{% endif %}{% if it.hard %} <span class="hint-tag warn">hard to find</span>{% endif %}</div>
     <p class="item-desc">{{ it.desc }}</p>
     <div class="facts">
       {% if it.value and it.currency != 'None' %}<span class="fact"><b>{{ '{:,.0f}'.format(it.value) }}</b> {{ 'units' if it.currency == 'Credits' else it.currency | lower }}</span>{% endif %}
@@ -20,7 +20,7 @@
   </div>
   <aside class="item-actions">
     <div class="action-label">You have</div>
-    {{ have_editor(it.id, have) }}
+    <div id="haveZone" data-live>{{ have_editor(it.id, have) }}</div>
     <div class="action-label">Add as goal</div>
     <div class="goal-add">
       <input type="number" id="goalQty" min="1" value="{{ 1 if it.requires else 250 }}" aria-label="Quantity">
@@ -29,8 +29,15 @@
   </aside>
 </header>
 
-{% if crafted_from %}
+{% if it.wiki and it.wiki.sources %}
   <section class="panel">
+    <div class="panel-head"><h2>Where to find it</h2>{% if it.wiki.rarity %}<span class="hint-tag {{ 'warn' if it.wiki.rarity == 'Rare' }}">{{ it.wiki.rarity }}</span>{% endif %}</div>
+    {{ where(it) }}
+  </section>
+{% endif %}
+
+{% if crafted_from %}
+  <section class="panel" id="craftedZone" data-live>
     <h2>{{ 'Repair cost' if it.damaged else 'Crafted from' }}</h2>
     <div class="chip-row">
       {% for c in crafted_from %}

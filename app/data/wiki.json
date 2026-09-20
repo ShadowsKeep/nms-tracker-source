@@ -1,0 +1,5314 @@
+{
+"licence": "CC BY-SA 3.0",
+"source": "https://nomanssky.fandom.com",
+"items": {
+"prod1": {
+"rarity": "",
+"sources": [
+{
+"text": "Can be automatically harvested by Antimatter Reactor.",
+"sub": false
+},
+{
+"text": "Can be found in Cargo Drops or Barrel Fabricators.",
+"sub": false
+},
+{
+"text": "Can sometimes be bought at Galactic Trade Terminals or from NPCs.",
+"sub": false
+},
+{
+"text": "Chromatic Metal,25;Condensed Carbon,20",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Antimatter"
+},
+"cur22": {
+"rarity": "",
+"sources": [
+{
+"text": "Albumen Pearls are most reliably sourced in cave systems beneath a planet's surface, inside red shells called Humming Sacs. Taking these will not alarm the Sentinels.",
+"sub": false
+},
+{
+"text": "On certain planets, they can be found everywhere on the surface inside large pea pod-shaped plants similar to Albumen Pearl Orbs but labelled as Sentient Plants by the Analysis Visor. While these planets usually have a high environmental hazard, this is not always the case. Taking Albumen Pearls from these plants will alarm the Sentinels.",
+"sub": false
+},
+{
+"text": "With assistance from a Farmer, Albumen Pearls can also be grown as a product of the Albumen Pearl Orb plant, with a harvest time of 2 hours.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Albumen_Pearl"
+},
+"prod71": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+},
+{
+"text": "Can be received after analysing Glowing Mineral",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Aronium"
+},
+"prod49": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be awarded by completing a certain stage of Scientific Research mission.",
+"sub": false
+},
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Acid"
+},
+"trade4": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be purchased from Galactic Trade Terminals in all high-wealth Advanced Materials Economy star systems.",
+"sub": false
+},
+{
+"text": "It is also obtainable in some, but not all, medium-wealth systems with this Economy.",
+"sub": false
+},
+{
+"text": "Can be gifted from Iteration: Hesperus in the Space Anomaly.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/5D_Torus"
+},
+"trade24": {
+"rarity": "",
+"sources": [
+{
+"text": "Autonomous Positioning Unit can be purchased from Galactic Trade Terminals in all high-wealth Technology Economy star systems. It is also obtainable in some, but not all, medium-wealth systems with this Economy.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Autonomous_Positioning_Unit"
+},
+"raw26": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "As a secondary element in some minerals or Hotspots on planets with Toxic biomes.",
+"sub": false
+},
+{
+"text": "Found in Hotspots on Mega Exotic planets located in green stellar systems.",
+"sub": false
+},
+{
+"text": "Also available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Recycling Toxic Industrial Waste at a Waste Processing Plant.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ammonia"
+},
+"cur85": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be found in Artifact Fragments located around the Ancient Ruin.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ancient_Key"
+},
+"prod2": {
+"rarity": "",
+"sources": [
+{
+"text": "Antimatter Housing can be purchased at Galactic Trade Terminals and Planetary Technology Merchants.",
+"sub": false
+},
+{
+"text": "This item has a 10% chance to drop out of barrel-type cargo. The AtlasPass v1 access card is required to open these.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Antimatter_Housing"
+},
+"raw41": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "It can be found on planets orbiting blue stars (typically extreme weather planets). It's easy to spot because of its specific blue color.",
+"sub": false
+},
+{
+"text": "Can be returned by industrial Frigate expeditions.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Activated_Indium"
+},
+"raw39": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "It can be found on planets orbiting red stars, (typically extreme weather planets) where it can be mined with the Terrain Manipulator attachment for the Multi-tool.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Activated_Cadmium"
+},
+"raw38": {
+"rarity": "Common",
+"sources": [
+{
+"text": "It can be found on planets orbiting yellow stars, (typically extreme weather planets) where it can be mined with the Terrain Manipulator attachment for the Multi-tool.",
+"sub": false
+},
+{
+"text": "It can also be salvaged from starships at a Starship Outfitting Terminal.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Activated_Copper"
+},
+"raw40": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "Mined from large deposits using the Terrain Manipulator. These deposits can be found using the Multi-tool.",
+"sub": false
+},
+{
+"text": "Can be provided by Frigate expeditions.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Activated_Emeril"
+},
+"cur47": {
+"rarity": "",
+"sources": [
+{
+"text": "The Active Void Egg can only be activated once a Void Egg is in the players inventory, and the player leaves a Space Station or Anomaly and uses the pulse drive within a Star system. The player will be notified to drop out of Pulse and then will encounter a deep-space creature which then activates the egg.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Active_Void_Egg"
+},
+"cur51": {
+"rarity": "",
+"sources": [
+{
+"text": "Occasionally received on shooting Asteroids. They are most commonly dropped from \"rare\" asteroids. These are most common in red star systems (12%). Anomaly Detectors have a 0.5% chance of dropping from these rare asteroids.",
+"sub": false
+},
+{
+"text": "Can be received for free from a Explorers Guild Envoy for standing rank \"Master\" and above.",
+"sub": false
+},
+{
+"text": "Can be found from Abandoned Wreckages that occasionally spawn on planets with Salvageable Scrap.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Anomaly_Detector"
+},
+"prod117": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Available from some Technology Merchants for 5000+ units",
+"sub": false
+},
+{
+"text": "From some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Amino_Chamber"
+},
+"raw61": {
+"rarity": "Unknown",
+"sources": [
+{
+"text": "In resource deposits on Volcanic planets, though not all eligible planets will present deposits.",
+"sub": false
+},
+{
+"text": "As a secondary element in some Minerals on Volcanic planets.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Basalt"
+},
+"trade42": {
+"rarity": "",
+"sources": [
+{
+"text": "Purchaseable in outlaw systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Banned_Weapons"
+},
+"raw71": {
+"rarity": "Common",
+"sources": [
+{
+"text": "Can be extracted from any creature fed with Creature Pellets in Expedition 7: Leviathan.",
+"sub": false
+},
+{
+"text": "Ancestral Memories are used in Expedition Seven: Leviathan in the Loop Research mission.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ancestral_Memories"
+},
+"raw72": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "Atlantideum can be acquired in a variety of ways:",
+"sub": false
+},
+{
+"text": "Mining purple crystals on Dissonant Planets",
+"sub": false
+},
+{
+"text": "Killing corrupted sentinel drones or quadrupeds (66%)",
+"sub": false
+},
+{
+"text": "Looting wheelbarrows at Harmonic Camps (8%)",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Atlantideum"
+},
+"cur134": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Bileworm"
+},
+"cur196": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ancient_Irontail"
+},
+"cur153": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Bleached_Bonefish"
+},
+"cur173": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Aberrant_Duskfin"
+},
+"cur178": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ash_Snail"
+},
+"raw80": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "It can be found on planets orbiting purple stars, (typically extreme weather planets) where it can be mined with the Terrain Manipulator attachment for the Multi-tool. It's easy to spot because of its specific purple color.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Activated_Quartzite"
+},
+"cur143": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Acidic_Pufferfish"
+},
+"cur146": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Bitterscale_Ray"
+},
+"cur277": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Abyssal_Horror_Egg"
+},
+"cur278": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Atlantidian_Crab"
+},
+"cur246": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Bladdersac"
+},
+"cur253": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Bewitching_Candlefish"
+},
+"raw1": {
+"rarity": "Common",
+"sources": [
+{
+"text": "Can be mined from flora.",
+"sub": false
+},
+{
+"text": "Can be found as a secondary element in some minerals.",
+"sub": false
+},
+{
+"text": "Can be farmed by constructing a Standing Planter in a base.",
+"sub": false
+},
+{
+"text": "Can be harvested from the walls of agricultural type freighter base building modules, such as the Biological Room (Expansion).",
+"sub": false
+},
+{
+"text": "Once the player has a Portable Refiner and Medium Refiner/Large Refiner, they can produce Carbon and Condensed Carbon for free.",
+"sub": false
+},
+{
+"text": "This can also be done with only a Portable Refiner, but with less yield.",
+"sub": false
+},
+{
+"text": "Refine 68 Carbon in Medium Refiner/Large Refiner to produce 34 Condensed Carbon.",
+"sub": false
+},
+{
+"text": "Place down the Portable Refiner and recharge its Fuel Inverter with the 34 Condensed Carbon.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Carbon"
+},
+"raw19": {
+"rarity": "Common",
+"sources": [
+{
+"text": "Copper sources include:",
+"sub": false
+},
+{
+"text": "Resource Deposits and Hotspots on planets orbiting yellow stars.",
+"sub": false
+},
+{
+"text": "Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Secondary element in cave minerals (rare).",
+"sub": false
+},
+{
+"text": "A Terrain Manipulator or Autonomous Mining Units are needed to mine copper deposits. A Mineral Extractor is required to harvest copper located using the Survey Device upgrade to the Analysis Visor.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Copper"
+},
+"cur40": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be found in Derelict Freighter lockers.",
+"sub": false
+},
+{
+"text": "It can be found in Damaged Containers or as monolith rewards.",
+"sub": false
+},
+{
+"text": "It can be purchased from NPCs at Trading Posts in Korvax systems.",
+"sub": false
+},
+{
+"text": "It is a possible reward from frigate expeditions.",
+"sub": false
+},
+{
+"text": "It is a possible trade from wandering traders you encounter while using the Pulse Engine.",
+"sub": false
+},
+{
+"text": "It can be given by a Korvax space station exploration guild envoy, if you have a sufficient exploration guild rank.",
+"sub": false
+},
+{
+"text": "It can be sold by landed NPC pilots",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Convergence_Cube"
+},
+"raw45": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "As described in the Game description, this element can be recovered from specific Echinocactus plants in desert/barren biomes.",
+"sub": false
+},
+{
+"text": "It can also be found mixed with carbon in carbon-based plants or trees. For easy discovery, scan these flora with your visor and see what elements are in them.",
+"sub": false
+},
+{
+"text": "It should be noted that the spawn rate for the \"classic\" Echinocactus plants is really low and is easier to find the element mixed with other flora found on barren planets",
+"sub": false
+},
+{
+"text": "With assistance from a Farmer, Cactus Flesh can also be grown as a product of the Echinocactus plant, with a harvest time of 16 hours and a yield of 100.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Cactus_Flesh"
+},
+"prod53": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Circuit_Board"
+},
+"cur4": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is given after talking to an Atlas Interface. Milestone Pathfinder or above is required.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Captured_Nanode"
+},
+"trade18": {
+"rarity": "",
+"sources": [
+{
+"text": "Bromide Salt can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Mining Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Bromide_Salt"
+},
+"trade28": {
+"rarity": "",
+"sources": [
+{
+"text": "Comet Droplets can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Trading Economy star systems. They are also offered as a reward for doing missions at the Mission Board.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Comet_Droplets"
+},
+"prod63": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Can be obtained as a mission reward.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Cryo-Pump"
+},
+"raw2": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "Found as red crystal minerals on the surface of every planet. The largest crystals require an Advanced Mining Laser to be mined. All crystals within a short radius of the player are shown as a red (C+) symbol on the HUD for a short period of time after activating the Scanner.",
+"sub": false
+},
+{
+"text": "Also found as a secondary element in some plants (must be identified with the Analysis Visor first).",
+"sub": false
+},
+{
+"text": "Can be collected from Support Frigates in player's fleet via the Communication Panel (by landing pads).",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Condensed_Carbon"
+},
+"raw14": {
+"rarity": "Common",
+"sources": [
+{
+"text": "From any Galactic Trade Terminal.",
+"sub": false
+},
+{
+"text": "As a primary element in stalagtite and stalagmite minerals found in caves.",
+"sub": false
+},
+{
+"text": "In resource deposits.",
+"sub": false
+},
+{
+"text": "Can be found randomly within Hotspots on any planet, but are guaranteed on Irradiated Planets.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Cobalt"
+},
+"raw23": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "Available for purchase from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Secondary element in some minerals.",
+"sub": false
+},
+{
+"text": "Can be requested from freighter's captain for rescuing his Freighter from pirates, up to 256 Chromatic Metal.",
+"sub": false
+},
+{
+"text": "Drops from destroyed Pirate ships and NPC ships (standing will decrease) in small amounts, 30-50 Chromatic Metal per ship destroyed.",
+"sub": false
+},
+{
+"text": "Drops from Freighter cargo pods (Sentinels will attack back) or accompanying free floating cargo pods (standing will decrease), 200-250 Chromatic Metal per pod destroyed.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Chromatic_Metal"
+},
+"raw20": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "It can be found on planets orbiting red stars, where it can be mined with the Terrain Manipulator attachment for the Multi-tool.",
+"sub": false
+},
+{
+"text": "Dismantling Pulse Engine Upgrade modules.",
+"sub": false
+},
+{
+"text": "Dismantling any class of Photon Cannon Upgrade yields 125 cadmium.",
+"sub": false
+},
+{
+"text": "Dismantling any class of Positron Ejector Upgrade yields 125 cadmium.",
+"sub": false
+},
+{
+"text": "Dismantling select ship upgrades can yield different amounts of cadmium.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Cadmium"
+},
+"prod3": {
+"rarity": "",
+"sources": [
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Carbon_Nanotubes"
+},
+"raw17": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "Created via further refining (detailed below)",
+"sub": false
+},
+{
+"text": "Labeled as 'Organic' Rock when using your Analysis Visor",
+"sub": false
+},
+{
+"text": "Found in large underwater Mineral formations that require an Advanced Mining Laser to harvest.",
+"sub": false
+},
+{
+"text": "From some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Chlorine"
+},
+"prod90": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is a reward given during the Starbirth mission.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Consciousness_Bridge"
+},
+"cur279": {
+"rarity": "",
+"sources": [
+{
+"text": "They can be randomly found in any star system and have a very low frequency of appearance.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Child_of_Helios"
+},
+"trade36": {
+"rarity": "",
+"sources": [
+{
+"text": "Purchaseable in outlaw systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Blood_Salt"
+},
+"trade41": {
+"rarity": "",
+"sources": [
+{
+"text": "Purchaseable in outlaw systems",
+"sub": false
+},
+{
+"text": "From freighter fleets in outlaw systems",
+"sub": false
+},
+{
+"text": "Can be found in Storage Containers aboard Crashed Freighters",
+"sub": false
+},
+{
+"text": "Missions from the Bounty Master aboard outlaw space stations",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Counterfeit_Circuits"
+},
+"cur99": {
+"rarity": "",
+"sources": [
+{
+"text": "Dropped from Sentinel Capital Ships (100%)",
+"sub": false
+},
+{
+"text": "As a reward for Nexus missions (1-2%)",
+"sub": false
+},
+{
+"text": "Gained occasionally from successful combat frigate expeditions (2.7%)",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Carrier_AI_Fragment"
+},
+"cur128": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Colossal_Shrimp"
+},
+"cur137": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Blistering_Eel"
+},
+"cur238": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Blind_Titancore"
+},
+"cur220": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Common_Shimmertail"
+},
+"cur177": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Common_Sunfish"
+},
+"cur222": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Clearwater_Skipper"
+},
+"cur206": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Brineskipper"
+},
+"cur141": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Caustic_Urchin"
+},
+"cur255": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Cave_Prowler"
+},
+"cur290": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Child_of_Aquarius"
+},
+"raw21": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "It can be found on planets orbiting green stars, where it can be mined with the Terrain Manipulator attachment for the Multi-tool.",
+"sub": false
+},
+{
+"text": "It can also be collected by feeding the fauna on certain planets. After a short period of time, they may dig some up or generate the element by various bodily functions.",
+"sub": false
+},
+{
+"text": "Once the player has Personal Refiner Mk 2/Medium Refiner/Large Refiner, they can use it to produce limitless Emeril:",
+"sub": false
+},
+{
+"text": "Start with x5 Emeril",
+"sub": false
+},
+{
+"text": "Refine x2 Emeril to create x3 Chromatic Metal.",
+"sub": false
+},
+{
+"text": "Refine x3 Emeril and x3 Chromatic Metal to create x6 Emeril.",
+"sub": false
+},
+{
+"text": "Repeat steps 2-3, creating x1 extra Emeril for every x5 Emeril started with.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Emeril"
+},
+"trade11": {
+"rarity": "",
+"sources": [
+{
+"text": "De-Scented Bottles can be purchased from Galactic Trade Terminals in all Scientific Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/De-Scented_Bottles"
+},
+"cur5": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is given after talking to an Atlas Interface. Milestone Juno or above is required.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Englobed_Shade"
+},
+"trade16": {
+"rarity": "",
+"sources": [
+{
+"text": "Dirt can be purchased from Galactic Trade Terminals in all Mining Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Dirt"
+},
+"trade9": {
+"rarity": "",
+"sources": [
+{
+"text": "Experimental Power Fluid can be purchased from Galactic Trade Terminals in all high-wealth Power Generation Economy star systems. It is also obtainable in some, but not all, medium-wealth systems with this Economy.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Experimental_Power_Fluid"
+},
+"prod72": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+},
+{
+"text": "Can be received after analysing Glowing Mineral",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Dirty_Bronze"
+},
+"trade31": {
+"rarity": "",
+"sources": [
+{
+"text": "Enormous Metal Cog can be purchased from Galactic Trade Terminals in all Manufacturing Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Enormous_Metal_Cog"
+},
+"cur7": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is given after talking to an Atlas Interface. Milestone Cassini or above is required.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Dark_Matter"
+},
+"cur8": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is given after talking to an Atlas Interface. Milestone Kepler or above is required.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Dawn%27s_End"
+},
+"prod59": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "It can be found at Resource Depots.",
+"sub": false
+},
+{
+"text": "It can also be obtained as a mission reward.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Enriched_Carbon"
+},
+"prod68": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Cryogenic Chamber can be purchased and sold at Galactic Trade Terminals and NPCs for a profit.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Cryogenic_Chamber"
+},
+"trade21": {
+"rarity": "",
+"sources": [
+{
+"text": "Decommissioned Circuits can be purchased from Galactic Trade Terminals in all Technology Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Decommissioned_Circuits"
+},
+"trade27": {
+"rarity": "",
+"sources": [
+{
+"text": "Decrypted User Data can be purchased from Galactic Trade Terminals in all Trading Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Decrypted_User_Data"
+},
+"raw5": {
+"rarity": "Common",
+"sources": [
+{
+"text": "Found as blue crystal minerals on the surface of every planet. The largest crystals require an Advanced Mining Laser to be mined. All crystals within a short radius of the player are shown as a blue (H) symbol on the HUD for a short period of time after activating the Scanner.",
+"sub": false
+},
+{
+"text": "Found as a secondary element in some individual minerals (must be identified with the Analysis Visor first).",
+"sub": false
+},
+{
+"text": "Also available for purchase from Galactic Trade Terminals in pirate controlled systems.",
+"sub": false
+},
+{
+"text": "Once the player has at least 30 Di-hydrogen and a Refiner, they can produce their own Di-hydrogen for free.",
+"sub": false
+},
+{
+"text": "Refine 30 Di-hydrogen to produce a Di-hydrogen Jelly (rather than crafting in the inventory which costs 40 Di-hydrogen).",
+"sub": false
+},
+{
+"text": "Refine the Di-hydrogen Jelly to produce 40 Di-hydrogen.",
+"sub": false
+},
+{
+"text": "Repeat steps 1 and 2, to produce 10 Di-hydrogen per cycle.",
+"sub": false
+},
+{
+"text": "However, do note that refining a single unit of Di-hydrogen Jelly from Di-hydrogen requires a full 60 seconds and that Di-hydrogen Jelly only stacks to 20, making this process very slow and tedious if you are looking to produce large quantities of Di-hydrogen (net yield of 200 units of Di-hydrogen per refiner after approximately 22 minutes, or roughly 545 units/hr). And while this could be scaled up with as many refi",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Di-hydrogen"
+},
+"raw6": {
+"rarity": "Common",
+"sources": [
+{
+"text": "Deuterium can be obtained in a variety of ways:",
+"sub": false
+},
+{
+"text": "purchased from terminals or NPCs",
+"sub": false
+},
+{
+"text": "refining process",
+"sub": false
+},
+{
+"text": "dismantling Deuterium-based technology, such as Pulse Engine Upgrades.",
+"sub": false
+},
+{
+"text": "Refining it requires a medium or large refiner.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Deuterium"
+},
+"raw28": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "As a secondary element in some minerals or in Resource Deposits or Hotspots on planets with Frozen biomes.",
+"sub": false
+},
+{
+"text": "Found in Hotspots on Mega Exotic planets located in blue stellar systems.",
+"sub": false
+},
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Dismantling Thermal Protection Upgrade (Cold)",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Dioxite"
+},
+"prod11": {
+"rarity": "",
+"sources": [
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Di-hydrogen_Jelly"
+},
+"cur32": {
+"rarity": "",
+"sources": [
+{
+"text": "Can be obtained from the sides of underwater vents. Use caution when harvesting, as the vent may trigger a blast of super-heated water which may cause damage to the harvester.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Crystal_Sulphide"
+},
+"raw18": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "It can be mined from various underwater flora, but be aware as this mining process may spawn Abyssal Horrors.",
+"sub": false
+},
+{
+"text": "For example from underwater cave root-like plants, (name may vary);",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Cyto-Phosphate"
+},
+"cur29": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be acquired from Di-hydrogen Crystals, indicated with when the Scanner is used.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Crystal_Fragment"
+},
+"cur34": {
+"rarity": "",
+"sources": [
+{
+"text": "A quest item which can be received at plaques.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Divergence_Cube"
+},
+"cur52": {
+"rarity": "",
+"sources": [
+{
+"text": "Can be purchased from the Scrap Dealer aboard the Space Station.",
+"sub": false
+},
+{
+"text": "Can be received as a reward from Nexus missions.",
+"sub": false
+},
+{
+"text": "Iteration: Helios aboard the Space Anomaly offers a free Emergency Signal Scanner each week",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Emergency_Signal_Scanner"
+},
+"raw69": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "Obtained as a mission reward from the Bounty Master at an Outlaw station.",
+"sub": false
+},
+{
+"text": "Obtained from trading terminals in abandoned space stations.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Cursed_Dust"
+},
+"cur77": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint can be obtained from frigate expeditions.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Dream_Aerial"
+},
+"cur97": {
+"rarity": "",
+"sources": [
+{
+"text": "Loot from a Corrupted Sentinel Quadruped",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Crystallised_Heart"
+},
+"cur102": {
+"rarity": "",
+"sources": [
+{
+"text": "Echo Locators are obtained via destroying a Dissonance Resonator, as alternative loot to the common Inverted Mirror required to unlock crashed Sentinel Interceptors. Echo Locators can also be found as a random drop from Corrupted Sentinel Quadrupeds.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Echo_Locator"
+},
+"cur132": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Dragonfish"
+},
+"cur151": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Emeril_Sunstar"
+},
+"cur285": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Expired_Braincoral"
+},
+"raw78": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "It can be found on planets orbiting purple stars, specifically on gas giants.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Crystallised_Helium"
+},
+"cur318": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Encrusted_Worm"
+},
+"cur320": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Cyclonic_Eel"
+},
+"cur232": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Deepwater_Angler"
+},
+"cur214": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Crystal_Jelly"
+},
+"cur294": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Deepwater_Minnow"
+},
+"cur248": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Electric_Eel"
+},
+"cur36": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be found in Damaged Containers or as monolith rewards.",
+"sub": false
+},
+{
+"text": "It can also be bought from NPCs in Trading Posts.",
+"sub": false
+},
+{
+"text": "It is a possible reward from frigate expeditions.",
+"sub": false
+},
+{
+"text": "It is also a possible trade from wandering traders you encounter while using the Pulse Engine .",
+"sub": false
+},
+{
+"text": "It is a possible reward from Practice Language with Geks",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/GekNip"
+},
+"cur35": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be found in Damaged Containers or as monolith rewards.",
+"sub": false
+},
+{
+"text": "It can be rewarded from Gek NPC on Minor Settlements.",
+"sub": false
+},
+{
+"text": "It can also be bought from NPCs in Trading Posts.",
+"sub": false
+},
+{
+"text": "It is a possible reward from frigate expeditions.",
+"sub": false
+},
+{
+"text": "It is also a possible trade from wandering traders you encounter while using the Pulse Engine .",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Gek_Relic"
+},
+"raw50": {
+"rarity": "Common",
+"sources": [
+{
+"text": "This resource can be obtained by feeding creatures on planets and then collecting their dropped dung samples. This process can be rather slow, however.",
+"sub": false
+},
+{
+"text": "With assistance from a Farmer, Faecium can also be grown as a product of the Gutrot Flower, yielding a base product of 25 with a harvest time of 4 hours.",
+"sub": false
+},
+{
+"text": "It can be found on some planets as a by-product of some carbon-based plants much like some gases.",
+"sub": false
+},
+{
+"text": "Sometimes it can be found in resource deposits on marsh planets.",
+"sub": false
+},
+{
+"text": "It can also be found as junk in some damaged machinery.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Faecium"
+},
+"raw43": {
+"rarity": "Rare",
+"sources": [
+{
+"text": ") containing Frost Crystals]]",
+"sub": false
+},
+{
+"text": "This element can be harvested from wild plants, but requires the use of Haz-Mat Gauntlet.",
+"sub": false
+},
+{
+"text": "With assistance from a Farmer, Frost Crystals can also be grown as a product of the Frostwort plant, providing a base yield of 50 with a harvest time of approximately 60 minutes.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Frost_Crystal"
+},
+"prod77": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+},
+{
+"text": "Can be received after analysing Glowing Mineral",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Geodesite"
+},
+"raw44": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "This element can be harvested from wild plants, but requires the use of Haz-Mat Gauntlet.",
+"sub": false
+},
+{
+"text": "With assistance from a Farmer, it can also be grown as a product of the Gamma Weed plant, yielding 50 with a harvest time of 4 hours.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Gamma_Root"
+},
+"prod67": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Can be obtained as a mission reward.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Fusion_Accelerant"
+},
+"prod79": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint can be acquired from Manufacturing Facilites or purchased from the Synthesis Laboratory for 250.",
+"sub": false
+},
+{
+"text": "The following ingredients are needed to create the three main parts of a Fusion Ignitor.",
+"sub": false
+},
+{
+"text": "600 Fungal Mould",
+"sub": false
+},
+{
+"text": "200 Cactus Flesh",
+"sub": false
+},
+{
+"text": "25 Mordite",
+"sub": false
+},
+{
+"text": "150 Condensed Carbon",
+"sub": false
+},
+{
+"text": "250 Nitrogen",
+"sub": false
+},
+{
+"text": "250 Radon",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Fusion_Ignitor"
+},
+"trade10": {
+"rarity": "",
+"sources": [
+{
+"text": "Fusion Core can be purchased from Galactic Trade Terminals in all high-wealth Power Generation Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Fusion_Core"
+},
+"raw42": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "As described in the Summary, this element can be obtained from specific reddish-brown mushrooms on toxic planets. Safely harvesting this resource requires the use of Haz-Mat Gauntlet.",
+"sub": false
+},
+{
+"text": "With assistance from a Farmer, Fungal Mould can also be grown as a product of the Fungal Cluster plant, with a harvest time of 4 hours yielding 50 Fungal Mould.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Fungal_Mould"
+},
+"raw8": {
+"rarity": "Common",
+"sources": [
+{
+"text": "As a primary element in most minerals.",
+"sub": false
+},
+{
+"text": "From any Galactic Trade Terminal.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ferrite_Dust"
+},
+"prod25": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is a reward given during the Freighter Command mission.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Frigate_Fuel_%2850_Tonnes%29"
+},
+"prod26": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is a reward given during the Freighter Command mission.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Frigate_Fuel_%28100_Tonnes%29"
+},
+"prod27": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is a reward given during the Freighter Command mission.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Frigate_Fuel_%28200_Tonnes%29"
+},
+"prod13": {
+"rarity": "",
+"sources": [
+{
+"text": "The product's blueprint is a possible reward from a Manufacturing Facility or Operations Centre.",
+"sub": false
+},
+{
+"text": "The blueprint can be researched at the Upgrade Control terminal for one Salvaged Frigate Module.",
+"sub": false
+},
+{
+"text": "A possible drop from Sentinel starships.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Explosive_Drones"
+},
+"prod12": {
+"rarity": "",
+"sources": [
+{
+"text": "The product's blueprint is a possible reward from a Manufacturing Facility or Operations Centre.",
+"sub": false
+},
+{
+"text": "The blueprint can be researched at the Upgrade Control terminal for one Salvaged Frigate Module.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Fuel_Oxidiser"
+},
+"raw60": {
+"rarity": "",
+"sources": [
+{
+"text": "Extracted from living beings with the Animus Beam.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Fragmented_Qualia"
+},
+"cur73": {
+"rarity": "",
+"sources": [
+{
+"text": "Flesh rope can be obtained from worms in a Titan Worm Burrow, found on infested planets.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Flesh_Rope"
+},
+"trade43": {
+"rarity": "",
+"sources": [
+{
+"text": "Purchaseable in outlaw systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/First_Spawn_Relics"
+},
+"cur75": {
+"rarity": "",
+"sources": [
+{
+"text": "Reward for outlaw missions, rewarded during the Under a Rebel Star mission.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Forged_Passport"
+},
+"cur125": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Giant_Ray"
+},
+"cur174": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Gamma_Squid"
+},
+"cur199": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Frostscale_Trout"
+},
+"cur205": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Frozen_Isopod"
+},
+"cur198": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Frozen_Whelk"
+},
+"cur208": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Frozen_Knifejaw"
+},
+"cur185": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Flashfire_Eel"
+},
+"cur204": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Frostshell_Clam"
+},
+"cur212": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Frostbite_Ray"
+},
+"cur314": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Gas-Worm"
+},
+"cur223": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Flourishing_Shalefish"
+},
+"cur239": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Fool%27s_Goldfish"
+},
+"cur254": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ferrite_Bowfin"
+},
+"raw33": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "As a primary (very rare) or secondary element in some minerals in caves.",
+"sub": false
+},
+{
+"text": "Can be mined from asteroids.",
+"sub": false
+},
+{
+"text": "Can be mined from deposits on Exotic planets.",
+"sub": false
+},
+{
+"text": "Can be extracted from Deep-Level Mineral Deposits on exotic planets.",
+"sub": false
+},
+{
+"text": "Acquired as loot dropped by pirates.",
+"sub": false
+},
+{
+"text": "Can be found in Metal 'Fingers'.",
+"sub": false
+},
+{
+"text": "Can be received from Gold Nuggets after they are analysed.",
+"sub": false
+},
+{
+"text": "Also available from some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Gold"
+},
+"cur23": {
+"rarity": "",
+"sources": [
+{
+"text": "Gravitino Balls will always spawn on planets with hostile or corrupted sentinels.",
+"sub": false
+},
+{
+"text": "They can also be found from a rock-like creature with a stalk holding a Gravitino Ball. These are called Sentient Plant in-game. The stalk will only appear when you're near it. This type has a low chance of appearing on planets without extreme weather, and is similar to the Light Stalk found around Xen in the game Half-Life.",
+"sub": false
+},
+{
+"text": "Several can also be found at certain Ancient Ruins.",
+"sub": false
+},
+{
+"text": "With assistance from a Farmer, Gravitino Balls can also be grown as a product of the Gravitino Host plant, with a harvest time of 120 minutes.",
+"sub": false
+},
+{
+"text": "Can be found on Frigate expeditions",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Gravitino_Ball"
+},
+"prod74": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+},
+{
+"text": "Can be received after analysing Glowing Mineral",
+"sub": false
+},
+{
+"text": "Can be salvaged from destroyed pirate ships.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Herox"
+},
+"prod73": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+},
+{
+"text": "Can be received after analysing Glowing Mineral",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Grantine"
+},
+"prod54": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Glass"
+},
+"prod51": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be awarded by completing a certain stage of Scientific Research mission.",
+"sub": false
+},
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "This can be found in a Cargo Drop",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Heat_Capacitor"
+},
+"trade34": {
+"rarity": "",
+"sources": [
+{
+"text": "Holographic Crankshaft can be purchased from Galactic Trade Terminals in all high-wealth Manufacturing Economy star systems. It is also obtainable in some, but not all, medium-wealth systems with this Economy.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Holographic_Crankshaft"
+},
+"cur13": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is given after talking to an Atlas Interface. Milestone Magellan or above is required.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Heart_of_the_Sun"
+},
+"prod62": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Can be obtained as a mission reward.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Hot_Ice"
+},
+"prod5": {
+"rarity": "",
+"sources": [
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Hermetic_Seal"
+},
+"prod14": {
+"rarity": "",
+"sources": [
+{
+"text": "The product's blueprint is a possible reward from a Manufacturing Facility or Operations Centre.",
+"sub": false
+},
+{
+"text": "The blueprint can be researched at the Upgrade Control terminal]] for one Salvaged Frigate Module.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Holographic_Analyser"
+},
+"cur27": {
+"rarity": "",
+"sources": [
+{
+"text": "1-3 Hex Cores rewarded for killing Anomalous fauna on specific planets with exotic biome. (14%)",
+"sub": false
+},
+{
+"text": "Can be received from an Anomaly Iteration as a gift",
+"sub": false
+},
+{
+"text": "Randomly from Black Market Vendor",
+"sub": false
+},
+{
+"text": "Randomly from Suspicious Packet (Goods) (3%)",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Hex_Core"
+},
+"raw4": {
+"rarity": "Common",
+"sources": [
+{
+"text": "Hexite can be acquired in a variety of ways:",
+"sub": false
+},
+{
+"text": "During the Starbirth mission, a set amount of Hexite is awarded at a nearby (marked) crashed freighter, for use in creating the Consciousness Bridge.",
+"sub": false
+},
+{
+"text": "Rewarded from Guild Envoys of the Merchants Guild.",
+"sub": false
+},
+{
+"text": "Can be purchased directly from vendors at some Outlaw Stations.",
+"sub": false
+},
+{
+"text": "Awarded from Nexus missions (3.5%).",
+"sub": false
+},
+{
+"text": "Can be obtained at a Multi-Tool Decommissioning Terminal at the Space Anomaly when the player chooses to scrap an Atlantidean Multi-Tool for Void Motes.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Hexite"
+},
+"cur18": {
+"rarity": "",
+"sources": [
+{
+"text": "Hypnotic Eye drops when an Abyssal Horror is killed. It will disappear if not picked up within a few seconds of spawning.",
+"sub": false
+},
+{
+"text": "These can be found in Derelict Freighter containers.",
+"sub": false
+},
+{
+"text": "Scrapping a Grafted Eyes upgrade that is attached to your living ship will produce 2 eyes.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Hypnotic_Eye"
+},
+"cur19": {
+"rarity": "",
+"sources": [
+{
+"text": "Up to five pieces can be acquired from an Alluring Specimen, but with each harvest there is a chance for an Abyssal Horror to appear, destroying the remaining cores.",
+"sub": false
+},
+{
+"text": "Can be found in Derelict Freighter containers.",
+"sub": false
+},
+{
+"text": "Can be found in the form of Submerged Relics (one piece).",
+"sub": false
+},
+{
+"text": "From Suspicious Packet (Goods).",
+"sub": false
+},
+{
+"text": "From Nexus and Mission Board Missions.",
+"sub": false
+},
+{
+"text": "As a gift from Planetary Settlement visitors.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Hadal_Core"
+},
+"prod29": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Hydrothermal_Fuel_Cell"
+},
+"cur31": {
+"rarity": "",
+"sources": [
+{
+"text": "Destroying asteroids",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Gold_Nugget"
+},
+"prod92": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is a reward given during the Starbirth mission.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Impossible_Membrane"
+},
+"prod108": {
+"rarity": "",
+"sources": [
+{
+"text": "Created by a Starship Outfitting Terminal at a Space Station when the player chooses \"Claim Scrap\" menu option to salvage their starship into Units.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Handful_of_Cogs"
+},
+"prod113": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Available from some Technology Merchants for 5000+ units",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Hydraulic_Wiring"
+},
+"cur79": {
+"rarity": "",
+"sources": [
+{
+"text": "One piece each can be harvested from Floating Crystals and from underground Buried Mineral Formations.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Glowing_Mineral"
+},
+"cur81": {
+"rarity": "",
+"sources": [
+{
+"text": "Interact with Combat Supplies dropped by Sentinel Hardframe to obtain.",
+"sub": false
+},
+{
+"text": "Destroying it will cause loss of loot.",
+"sub": true
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Hardframe_Engine"
+},
+"trade40": {
+"rarity": "",
+"sources": [
+{
+"text": "Purchaseable in outlaw systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/GrahGrah"
+},
+"cur78": {
+"rarity": "",
+"sources": [
+{
+"text": "Expedition 8: Polestar Log 5: Horizons milestone.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Homeworld_Repeater"
+},
+"cur98": {
+"rarity": "",
+"sources": [
+{
+"text": "Loot from crashed Sentinel Interceptors (100%).",
+"sub": false
+},
+{
+"text": "Loot from destroying enemy sentinel interceptors in space (15%)",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Hyaline_Brain"
+},
+"cur118": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Greenscale_Bloater"
+},
+"cur122": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Hypnotic_Octopus"
+},
+"cur131": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Golden_Jellyfish"
+},
+"cur139": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Green-Ring_Octopus"
+},
+"cur140": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Giant_Whiskerfish"
+},
+"cur175": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Helix_Sawfish"
+},
+"cur197": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ice_Darter"
+},
+"cur202": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Glacier_Carp"
+},
+"cur252": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Golden_Urchin"
+},
+"cur245": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Greater_Rocktooth"
+},
+"prod76": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+},
+{
+"text": "Can be received after analysing Glowing Mineral",
+"sub": false
+},
+{
+"text": "It can also be salvaged from destroyed pirate ships and chests on planets.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Lemmium"
+},
+"cur39": {
+"rarity": "",
+"sources": [
+{
+"text": "The simplest way to get Korvax Casings in large amounts is to buy it from pilot NPCs in any Trading Post found in Korvax systems.",
+"sub": false
+},
+{
+"text": "Can be found in Damaged Containers or as monolith rewards.",
+"sub": false
+},
+{
+"text": "A possible reward from frigate expeditions.",
+"sub": false
+},
+{
+"text": "A possible trade from wandering traders you encounter while using the Pulse Engine.",
+"sub": false
+},
+{
+"text": "With a 10% chance from crew lockers in Derelict Freighters.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Korvax_Casing"
+},
+"raw48": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "It can be harvested from Cave Marrows that can be found in caves.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Marrow_Bulb"
+},
+"raw49": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "It can be harvested from Candle Kelp that can be found underwater, but it is advisable to get into interaction range of the plants, as they can replenish the exosuit's oxygen supply.",
+"sub": false
+},
+{
+"text": "On the Galactic Map it is indicated with Water if the star system has a body of water. This information is not indicated on planetary scans, however the water on the surface is visible to the naked eye from space.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Kelp_Sac"
+},
+"prod57": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Lubricant"
+},
+"trade13": {
+"rarity": "",
+"sources": [
+{
+"text": "Instability Injector can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Scientific Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Instability_Injector"
+},
+"prod58": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Living_Glass"
+},
+"prod56": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Liquid_Explosive"
+},
+"raw54": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "Living Slime can be acquired in several ways:",
+"sub": false
+},
+{
+"text": "Purchased and sold at Galactic Trade Terminals and NPCs for a profit.",
+"sub": false
+},
+{
+"text": "Found in alien-infested Derelict Freighters.",
+"sub": false
+},
+{
+"text": "Sometimes dropped when killing fauna on Exotic planets.",
+"sub": false
+},
+{
+"text": "Damaged Machinery",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Living_Slime"
+},
+"trade29": {
+"rarity": "",
+"sources": [
+{
+"text": "Ion Sphere can be purchased from Galactic Trade Terminals in all high-wealth Trading Economy star systems. It is also obtainable in some, but not all, medium-wealth systems with this Economy.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ion_Sphere"
+},
+"trade23": {
+"rarity": "",
+"sources": [
+{
+"text": "Ion Capacitor can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Technology Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ion_Capacitor"
+},
+"prod78": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+},
+{
+"text": "Can be received after analysing Glowing Mineral",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Iridesite"
+},
+"prod75": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+},
+{
+"text": "Can be received after analysing Glowing Mineral",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Magno-Gold"
+},
+"trade7": {
+"rarity": "",
+"sources": [
+{
+"text": "An Industrial-Grade Battery can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Power Generation Economy star systems. It is also obtainable in some, but not all, low-wealth systems with this Economy.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Industrial-Grade_Battery"
+},
+"raw22": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "It can be found on planets orbiting blue stars. It's easy to spot because of its specific blue color.",
+"sub": false
+},
+{
+"text": "NOTE: prior to Synthesis update the Indium output was twice as high.",
+"sub": false
+},
+{
+"text": "Once the player has Medium Refiner/Large Refiner, they can use it to produce limitless Indium:",
+"sub": false
+},
+{
+"text": "Start with x6 Indium.",
+"sub": false
+},
+{
+"text": "Refine x2 Indium to create x4 Chromatic Metal.",
+"sub": false
+},
+{
+"text": "Refine x4 Indium and x4 Chromatic Metal to create x8 Indium.",
+"sub": false
+},
+{
+"text": "Repeat steps 2-3, creating 8 Indium for every 6 Indium started with.",
+"sub": false
+},
+{
+"text": "Convert 1/3 of your Indium to Chromatic Metal, then combine with remaining 2/3rds of Indium to make 33% more.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Indium"
+},
+"raw15": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ionised_Cobalt"
+},
+"raw10": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "From resource cans dropped by defeated pirates.",
+"sub": false
+},
+{
+"text": "In Resource Deposits.",
+"sub": false
+},
+{
+"text": "Collectable by boarding any player-owned industrial Frigate that is not on an expedition.",
+"sub": false
+},
+{
+"text": "Obtained from Geodes after cracking them open. Geodes have two rewards for magnetised ferrite:",
+"sub": false
+},
+{
+"text": "60-80 Fe++, 5.2%",
+"sub": true
+},
+{
+"text": "80-120 Fe++, 2.6%",
+"sub": true
+},
+{
+"text": "Also available from some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Magnetised_Ferrite"
+},
+"prod20": {
+"rarity": "",
+"sources": [
+{
+"text": "Can always be bought from any Galactic Trade Terminal or from pilot NPCs on Space Stations (only on \"Goods Availability->Abundant\" setting).",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ion_Battery"
+},
+"cur15": {
+"rarity": "",
+"sources": [
+{
+"text": "There are several ways to harvest Larval Cores:",
+"sub": false
+},
+{
+"text": "The player can team up with another player and have one member of the party use starship weapons to destroy the Whispering Eggs. This way no Biological Horrors will spawn.",
+"sub": false
+},
+{
+"text": "The player can claim a base near the nests, then construct walls around a nest. After breaking a different Whispering Egg's nest, and rush back to the walled nest. The walled nest is now safe for harvesting, as no Biological Horrors can enter, and none will spawn inside.",
+"sub": false
+},
+{
+"text": "The player can use a Terrain Manipulator to tunnel underneath the nest. This way the Whispering Eggs will fall into the tunnel, and the Biological Horrors do not follow.",
+"sub": false
+},
+{
+"text": "The player can set the Terrain Manipulator to create mode, set it to generate a large square rock, and then enclose themselves and the Whispering Eggs in a very small completely enclosed rock room. The Biological Horrors spawn a few units away outside the player's reach, so the Whispering Eggs can be harvested freely. After a while the Biological Horrors subside and the player can break out using the destroy mode of ",
+"sub": false
+},
+{
+"text": "Since Whispering Eggs spawn around Abandoned Buildings, it is possible to harvest one and run inside the building for safety and wait until the swarm has subsided. Using the Jetpack to boost on top of the Abandoned Building will also work, but the projectile attacks of the Biological Horrors need to be dodged. The player should be aware which section of the building they stand on, as the Tentacle Plant can attack the",
+"sub": false
+},
+{
+"text": "An accelerated but much more risky version of the above strategy is to stand on top of the building, break the egg, then jump down, grab the egg, and quickly boost back to the roof of the building, then repeating until there are no eggs left. There is a small chance the player can get rammed, so the player should be sure to have decent shield upgrades before using the tactic.",
+"sub": false
+},
+{
+"text": "The player can park the exocraft next to the Whispering Eggs, harvest them and quickly gather the Larval Cores, then get back into the exocraft. Biological Horrors will start attacking the exocraft but they won't cause any harm to it. Beware of sentinels because every time Biological Horrors touch the exocraft, they will die and the sentinels will take notice of that.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Larval_Core"
+},
+"prod23": {
+"rarity": "",
+"sources": [
+{
+"text": "Can always be bought from any Galactic Trade Terminal or from pilot NPCs on Space Stations (only on \"Goods Availability->Abundant\" setting).",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Life_Support_Gel"
+},
+"cur17": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be found in Armoured Clams. Damage will force them to open their shells for a short time, revealing the Living Pearl inside. If it is not taken in the allotted time, the shells will close and the player needs to damage them again. It can also be taken without doing damage by interacting and not getting too close.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Living_Pearl"
+},
+"prod98": {
+"rarity": "",
+"sources": [
+{
+"text": "Can be obtained from Child of Helios as part of Starbirth mission. (Child of Helios will appear when using pulse engine between planets after retrieving Hypnotic Eye for the mission.",
+"sub": false
+},
+{
+"text": "Each Child of Helios encountered will award Living Water x150, which is half the maximum stack size of 300 per standard inventory slot.",
+"sub": false
+},
+{
+"text": "So long as the player does not craft Impossible Membrane, they can trigger multiple encounters in rapid succession using the pulse drive to obtain large quantities of Living Water, amounting to 242,400 units of sell value per encounter. It is not necessary to sell or remove the stacks of Living Water to trigger this exploit. The extra Living Water can be used to create more Impossible Membrane for more Living Ship.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Living_Water"
+},
+"raw59": {
+"rarity": "Common",
+"sources": [
+{
+"text": "Can be mined from metallic terrain deposits with a Solar Ray.",
+"sub": false
+},
+{
+"text": "Liquid Sun is used in Expedition Seven: Leviathan to build the Whalesong Flute and in the Loop Research mission.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Liquid_Sun"
+},
+"prod115": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Available from some Technology Merchants for 5000+ units",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Magnetic_Resonator"
+},
+"cur100": {
+"rarity": "",
+"sources": [
+{
+"text": "Loot from a Dissonance Resonator with the Inverted Mirror tag.",
+"sub": false
+},
+{
+"text": "May also be found on Harmonic Scrap.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Inverted_Mirror"
+},
+"cur123": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Longjaw_Snapper"
+},
+"cur280": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Many-Mouthed_Lunker"
+},
+"cur172": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Many-Eyed_Jellyfish"
+},
+"cur195": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Jelly_of_the_Veil"
+},
+"cur180": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Lavascale_Trout"
+},
+"cur228": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Jungle_Redfin"
+},
+"raw77": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "It can be found in planetary deposits on ocean planets.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Lithium"
+},
+"cur316": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Inert_Whelk"
+},
+"cur317": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Jelly_Prawn"
+},
+"cur240": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Lesser_Dustfin"
+},
+"cur250": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Mantis_Ray"
+},
+"prod6": {
+"rarity": "",
+"sources": [
+{
+"text": "Also available from any Galactic Trade Terminal.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Metal_Plating"
+},
+"raw30": {
+"rarity": "Common",
+"sources": [
+{
+"text": "It can be recovered from killing fauna in the game.",
+"sub": false
+},
+{
+"text": "It can be harvested from Mordite Root (yields 25 every eight hours of real time).",
+"sub": false
+},
+{
+"text": "It can also be found in 'Organic' Rocks.",
+"sub": false
+},
+{
+"text": "It can be found in Mineral Deposits on Marsh planets.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Mordite"
+},
+"raw56": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "Nanite Cluster can be acquired by:",
+"sub": false
+},
+{
+"text": "Searching abandoned buildings on planets.",
+"sub": false
+},
+{
+"text": "Uploading Discoveries",
+"sub": false
+},
+{
+"text": "Discovering all creatures on a planet and claiming the rewarded nanites.",
+"sub": false
+},
+{
+"text": "Feeding certain animals, which will lead you to a buried object that yields them.",
+"sub": false
+},
+{
+"text": "Searching Damaged Machinery.",
+"sub": false
+},
+{
+"text": "Destroying Sentinels.",
+"sub": false
+},
+{
+"text": "Destroying Freighter cargo containers with no resource tag.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Nanite_Cluster"
+},
+"raw37": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "As a secondary element in some flora.",
+"sub": false
+},
+{
+"text": "From Atmosphere Harvesters built on planets with Lush and Toxic biomes.",
+"sub": false
+},
+{
+"text": "Using Gas Extractor at a Nitrogen Concentrated Gas Cloud on Toxic or Lush biomes.",
+"sub": false
+},
+{
+"text": "It can be found at Resource Depots.",
+"sub": false
+},
+{
+"text": "From Stellar Extractor Room while being in solar systems with Red/Orange stars.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Nitrogen"
+},
+"trade12": {
+"rarity": "",
+"sources": [
+{
+"text": "Neutron Microscope can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Scientific Economy star systems. It is also obtainable in some, but not all, low-wealth systems with this Economy.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Neutron_Microscope"
+},
+"trade15": {
+"rarity": "",
+"sources": [
+{
+"text": "Neural Duct can be purchased from Galactic Trade Terminals in all high-wealth Scientific Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Neural_Duct"
+},
+"cur3": {
+"rarity": "",
+"sources": [
+{
+"text": "Soul Engine,1;Wiring Loom,3;Glass,3",
+"sub": false
+},
+{
+"text": "In Expedition 13: Adrift, Hypnotic Eye,1;Atlantideum,99;Activated Copper,64",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Mind_Ark"
+},
+"trade1": {
+"rarity": "",
+"sources": [
+{
+"text": "Nanotube Crate can be purchased from Galactic Trade Terminals in all Advanced Materials Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Nanotube_Crate"
+},
+"trade33": {
+"rarity": "",
+"sources": [
+{
+"text": "Six-Pronged Mesh Decoupler can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Manufacturing Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Mesh_Decouplers"
+},
+"trade32": {
+"rarity": "",
+"sources": [
+{
+"text": "Non-Stick Piston can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Manufacturing Economy star systems. It is also obtainable in some, but not all, low-wealth systems with this Economy.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Non-Stick_Piston"
+},
+"cur6": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is given after talking to an Atlas Interface. Milestone Rosetta or above is required.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Noospheric_Orb"
+},
+"cur11": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is given after talking to an Atlas Interface. Milestone Hubble or above is required.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Novae_Reclaiment"
+},
+"cur12": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is given after talking to an Atlas Interface. Milestone Viking or above is required.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Modified_Quanta"
+},
+"trade8": {
+"rarity": "",
+"sources": [
+{
+"text": "Ohmic Gel can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Power Generation Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ohmic_Gel"
+},
+"prod7": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be awarded in the Scientific Research mission, found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Also available from any Galactic Trade Terminal.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Microprocessor"
+},
+"prod60": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Can be found in planetary depots.",
+"sub": false
+},
+{
+"text": "Can be obtained as a mission reward.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+},
+{
+"text": "Can be purchased from NPCs in some Minor Settlements.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Nitrogen_Salt"
+},
+"prod16": {
+"rarity": "",
+"sources": [
+{
+"text": "The product's blueprint is a possible reward from a Manufacturing Facility or Operations Centre.",
+"sub": false
+},
+{
+"text": "The blueprint can be researched at the Upgrade Control terminal for one Salvaged Frigate Module.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Mineral_Compressor"
+},
+"prod15": {
+"rarity": "",
+"sources": [
+{
+"text": "The product's blueprint is a possible reward from a Manufacturing Facility or Operations Centre.",
+"sub": false
+},
+{
+"text": "The blueprint can be researched at the Upgrade Control terminal for one Salvaged Frigate Module.",
+"sub": false
+},
+{
+"text": "Possible drop from Sentinel starships.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Mind_Control_Device"
+},
+"cur14": {
+"rarity": "",
+"sources": [
+{
+"text": "The primary source is harvesting.",
+"sub": false
+},
+{
+"text": "Can be purchased in outlaw systems.",
+"sub": false
+},
+{
+"text": "Can be occasionally bought from Scrap Dealers on space stations.",
+"sub": false
+},
+{
+"text": "Can be found in Derelict Freighter containers.",
+"sub": false
+},
+{
+"text": "Can occasionally be given as a reward for Nexus missions.",
+"sub": false
+},
+{
+"text": "Can occasionally be purchased on planets from black market traders for nanites.",
+"sub": false
+},
+{
+"text": "Can occasionally be purchased on planets from landed ships.",
+"sub": false
+},
+{
+"text": "It is a possible reward from frigate expeditions.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/NipNip_Buds"
+},
+"prod107": {
+"rarity": "",
+"sources": [
+{
+"text": "Sometimes created by a Starship Outfitting Terminal at a Space Station when the player chooses \"Claim Scrap\" menu option to salvage their starship into Units.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Once-Useful_Springs"
+},
+"trade38": {
+"rarity": "",
+"sources": [
+{
+"text": "Purchaseable in outlaw systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Moon_Ether"
+},
+"cur107": {
+"rarity": "",
+"sources": [
+{
+"text": "You will automatically receive the recipe for making worms when you purchase fishing tackle (this is a multitool technology and costs only 1 nanite).",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Mealworms"
+},
+"cur120": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Needlefish"
+},
+"cur114": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Mud_Crab"
+},
+"cur127": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Moon_Turtle"
+},
+"cur289": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Message_in_a_Bottle"
+},
+"cur217": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Nautilia"
+},
+"cur259": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Megalodon"
+},
+"cur194": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Mirrorscale_Skipper"
+},
+"cur176": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Oilfin"
+},
+"cur226": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Mellifluous_Jellyfish"
+},
+"cur200": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Midnight_Eel"
+},
+"raw79": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "From Atmosphere Harvesters built on gas planets or the Stellar Extractor Room.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Methane"
+},
+"cur287": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Old_Boot"
+},
+"raw34": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "Can be bought from some Galactic Trade Terminals or Ship Traders.",
+"sub": false
+},
+{
+"text": "Can be mined from crystalline/amorphous asteroids.",
+"sub": false
+},
+{
+"text": "As a secondary element in some minerals in caves.",
+"sub": false
+},
+{
+"text": "By destroying freighter cargo",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Platinum"
+},
+"raw31": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "Drops from destroyed Sentinels; the received amount depends on what type of sentinel is destroyed, see more information here.",
+"sub": false
+},
+{
+"text": "Also available from some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Pugneum"
+},
+"trade14": {
+"rarity": "",
+"sources": [
+{
+"text": "Organic Piping can be purchased from Galactic Trade Terminals in all high-wealth Scientific Economy star systems. It is also obtainable in some, but not all, medium-wealth systems with this Economy.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Organic_Piping"
+},
+"prod52": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Poly_Fibre"
+},
+"raw36": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "As a secondary element in some flora.",
+"sub": false
+},
+{
+"text": "From Mutant Plants in Irradiated biomes.",
+"sub": false
+},
+{
+"text": "From Atmosphere Harvesters built on planets with Irradiated or Frozen biomes.",
+"sub": false
+},
+{
+"text": "Using Gas Extractor at a Radon Concentrated Gas Cloud.",
+"sub": false
+},
+{
+"text": "It can be found at Resource Depots.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Radon"
+},
+"trade19": {
+"rarity": "",
+"sources": [
+{
+"text": "Polychromatic Zirconium can be purchased from Galactic Trade Terminals in all high-wealth Mining Economy star systems. It is also obtainable in some, but not all, medium-wealth systems with this Economy.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Polychromatic_Zirconium"
+},
+"trade20": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be purchased from Galactic Trade Terminals in all high-wealth Mining Economy star systems.",
+"sub": false
+},
+{
+"text": "It can also be obtained via the completion of missions.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Re-latticed_Arc_Crystal"
+},
+"trade3": {
+"rarity": "",
+"sources": [
+{
+"text": "Optical Solvent can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Advanced Materials Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Optical_Solvent"
+},
+"prod65": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be obtained in two ways:",
+"sub": false
+},
+{
+"text": "Purchased from Synthesis Laboratory for 250 on the Space Anomaly",
+"sub": true
+},
+{
+"text": "In the Manufacturing Facilities and Operations Centres through either a random drop or the Components blueprint unlock panel thanks to the use of Factory Override Unit (which is the same as in the Synthesis Laboratory).",
+"sub": true
+},
+{
+"text": "Individual units of the Organic Catalyst can be obtained:",
+"sub": false
+},
+{
+"text": "As a mission reward.",
+"sub": true
+},
+{
+"text": "From the Frigate expeditions.",
+"sub": true
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Organic_Catalyst"
+},
+"cur9": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is given after talking to an Atlas Interface. Milestone Dawn or above is required.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Photic_Jade"
+},
+"prod70": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Can also be obtained as an industrial product of a Korvax settlement when an S-Class industrial facility is present",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Quantum_Processor"
+},
+"trade25": {
+"rarity": "",
+"sources": [
+{
+"text": "Quantum Accelerator can be purchased from Galactic Trade Terminals in all high-wealth Technology Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Quantum_Accelerator"
+},
+"raw3": {
+"rarity": "Common",
+"sources": [
+{
+"text": "Can be harvested from red plants in the wild. (These red plants are what used to be Thamium9)",
+"sub": false
+},
+{
+"text": "Can be found as a secondary element in some flora.",
+"sub": false
+},
+{
+"text": "Can be found as a primary element in Underground Toxic Hazard.",
+"sub": false
+},
+{
+"text": "Can always be bought from any Galactic Trade Terminal or from pilot NPCs on Space Stations (only on \"Goods Availability->Abundant\" setting).",
+"sub": false
+},
+{
+"text": "Obtained from an Oxygen Harvester.",
+"sub": false
+},
+{
+"text": "Obtained from an Atmosphere Harvester on exotic planets.",
+"sub": false
+},
+{
+"text": "Using Gas Extractor at an Oxygen Concentrated Gas Cloud.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Oxygen"
+},
+"raw9": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "As a primary or secondary element in some minerals. These minerals usually require Advanced Mining Laser to harvest.",
+"sub": false
+},
+{
+"text": "Also available from some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Pure_Ferrite"
+},
+"raw29": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "As a secondary element in some minerals or in Resource Deposits or Hotspots on planets with Scorched biomes.",
+"sub": false
+},
+{
+"text": "Found in Hotspots on Mega Exotic planets located in red stellar systems.",
+"sub": false
+},
+{
+"text": "Also available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Recycling Explosive Industrial Waste at a Waste Processing Plant.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Phosphorus"
+},
+"raw24": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "As a secondary element in some minerals or in Resource Deposits on planets with Lush biomes.",
+"sub": false
+},
+{
+"text": "From Hotspot on planets with Lush biomes.",
+"sub": false
+},
+{
+"text": "Also available from some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Paraffinium"
+},
+"raw25": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "As a secondary element in some minerals or in Resource Deposits or Hotspots on planets with Barren biomes.",
+"sub": false
+},
+{
+"text": "Also available from some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Pyrite"
+},
+"prod69": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Portable_Reactor"
+},
+"cur1": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be obtained by the following methods:",
+"sub": false
+},
+{
+"text": "destroying the Combat Supplies containers dropped by Sentinel Quads",
+"sub": false
+},
+{
+"text": "Suspicious Packet (Goods) from the Scrap Dealer",
+"sub": false
+},
+{
+"text": "a gift from Guild Envoys of the Mercenaries Guild",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Quad_Servo"
+},
+"prod91": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is a reward given during the Starbirth mission.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Pulsating_Core"
+},
+"prod109": {
+"rarity": "",
+"sources": [
+{
+"text": "Sometimes created by a Starship Outfitting Terminal at a Space Station when the player chooses \"Claim Scrap\" menu option to salvage their starship into Units.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Reinforced_Piping"
+},
+"prod99": {
+"rarity": "",
+"sources": [
+{
+"text": "Purchased from Contraband Agent for around 100,000 Units",
+"sub": false
+},
+{
+"text": "Found in Derelict Freighters",
+"sub": false
+},
+{
+"text": "Reward for some missions given by the Mission Agent on Space Stations and Outlaw Stations.",
+"sub": false
+},
+{
+"text": "Reward for some Nexus Missions",
+"sub": false
+},
+{
+"text": "Bought at the Scrap Dealer for 811-828 Tainted Metal",
+"sub": false
+},
+{
+"text": "Opened from Suspicious Packet (Goods)",
+"sub": false
+},
+{
+"text": "Purchased from Harmonic Camp terminals for around 200 Void Mote",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Repair_Kit"
+},
+"prod114": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Available from some Technology Merchants for 5000+ units",
+"sub": false
+},
+{
+"text": "Can be produced from Salvaged Glass.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Quantum_Computer"
+},
+"cur83": {
+"rarity": "",
+"sources": [
+{
+"text": "Loot a Walker Brain from a Sentinel Walker and take it to Tethys near the Portal on the Space Anomaly.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Radiant_Brain"
+},
+"trade39": {
+"rarity": "",
+"sources": [
+{
+"text": "Purchaseable in outlaw systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Prismatic_Feathers"
+},
+"cur101": {
+"rarity": "",
+"sources": [
+{
+"text": "Mining large purple crystals on Dissonant Planets.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Radiant_Shard"
+},
+"cur103": {
+"rarity": "",
+"sources": [
+{
+"text": "Occasionally received on destroying pirate Starships.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Pirate_Transponder"
+},
+"cur115": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Pondskipper"
+},
+"cur116": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Reef_Eel"
+},
+"cur286": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Ossified_Coral"
+},
+"cur207": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Pale_Snowtail"
+},
+"raw75": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "It can be found on planets orbiting purple stars, where it can be mined with the Terrain Manipulator attachment for the Multi-tool.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Quartzite"
+},
+"raw76": {
+"rarity": "",
+"sources": [
+{
+"text": "Can be harvested from Ruined Structure found on ruined worlds using a Mining Beam. These structures are exclusive to the Reliquary planetary biome, and its 22 name variants.",
+"sub": false
+},
+{
+"text": "Small amounts can also be gained from defeating Vigilant Stone guardians.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Polished_Stone"
+},
+"cur315": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Pressurised_Clam"
+},
+"cur319": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Plasmatic_Squid"
+},
+"cur24": {
+"rarity": "",
+"sources": [
+{
+"text": "Sac Venom can be found by destroying urchin-like creatures found on planetary surfaces and under the water. Like other high value non-stackable trading commodities, some planets have an abundance of these.",
+"sub": false
+},
+{
+"text": "With assistance from a Farmer, Sac Venom also be grown as a product of the Venom Urchin plant, with a harvest time of 3 hours 20 minutes.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Sac_Venom"
+},
+"raw53": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "Upon opening a Damaged Container, a GUI will pop up with an option to either discard or keep some Rusted Metal. Each container can contain between 50 and 100 Rusted Metal. Once the Rusted Metal is either discarded or moved to your inventory, the Damaged Container will open and you can receive a reward.",
+"sub": false
+},
+{
+"text": "Rusted Metal can be purchased from some Galactic Trade Terminals and pilot NPCs.",
+"sub": false
+},
+{
+"text": "Rusted Metal is a rare planetary resource to be mined akin to Ferrite and its variants. Seen on Dead Worlds.",
+"sub": false
+},
+{
+"text": "May be acquired when recycling metallic Industrial Waste in the furnace at a Waste Processing Plant.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Rusted_Metal"
+},
+"raw51": {
+"rarity": "Common",
+"sources": [
+{
+"text": "Every Abandoned Building has a terminal and interacting with it allows the player to either discard the Residual Goop or move it to the exosuit inventory. After that the terminal can be used. Each terminal can contain up to 200 Residual Goop.",
+"sub": false
+},
+{
+"text": "Residual Goop can be purchased from some Galactic Trade Terminals and pilot NPCs.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Residual_Goop"
+},
+"trade2": {
+"rarity": "",
+"sources": [
+{
+"text": "Self-Repairing Heridium can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Advanced Materials Economy star systems. It is also obtainable in some, but not all, low-wealth systems with this Economy.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Self-Repairing_Heridium"
+},
+"prod64": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Can be obtained as a mission reward.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+},
+{
+"text": "Can be purchased from NPCs in some Minor Settlements.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Semiconductor"
+},
+"raw52": {
+"rarity": "Common",
+"sources": [
+{
+"text": "This item can be received as a gift from the Guild representatives in space stations.",
+"sub": false
+},
+{
+"text": "Runaway Mould can be purchased and sold at Galactic Trade Terminals and NPCs for a profit.",
+"sub": false
+},
+{
+"text": "This item can be received from encrypted missions at the Nexus.",
+"sub": false
+},
+{
+"text": "This item can also be obtained from Curious Deposits on some planets, appearing as a sphere that rolls when mined.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Runaway_Mould"
+},
+"raw32": {
+"rarity": "Common",
+"sources": [
+{
+"text": "Can be mined from asteroids.",
+"sub": false
+},
+{
+"text": "Can be found in Resource Deposits.",
+"sub": false
+},
+{
+"text": "Can be extracted from Deep-Level Mineral Deposits.",
+"sub": false
+},
+{
+"text": "As a secondary element in some minerals in caves.",
+"sub": false
+},
+{
+"text": "Also available from some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Silver"
+},
+"raw16": {
+"rarity": "Common",
+"sources": [
+{
+"text": "As a secondary element in some minerals.",
+"sub": false
+},
+{
+"text": "Primary element in most underwater minerals.",
+"sub": false
+},
+{
+"text": "In Resource Deposits.",
+"sub": false
+},
+{
+"text": "Also available from some Galactic Trade Terminals.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Salt"
+},
+"raw11": {
+"rarity": "Common",
+"sources": [
+{
+"text": "It can be mined from soil using the Terrain Manipulator.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Silicate_Powder"
+},
+"prod93": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is a reward given during the Starbirth mission.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Seeds_of_Glass"
+},
+"cur80": {
+"rarity": "",
+"sources": [
+{
+"text": "May be recovered from Combat Supplies dropped by defeated Sentinels.",
+"sub": false
+},
+{
+"text": "Occasionally found on Autophage heads and crashed Sentinel Interceptors on dissonant planets.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Salvaged_Glass"
+},
+"prod150": {
+"rarity": "",
+"sources": [
+{
+"text": "Salvage Container (10%)",
+"sub": false
+},
+{
+"text": "Killing Sentinel Walkers (5%)",
+"sub": false
+},
+{
+"text": "Killing Sentinel Quads (3%)",
+"sub": false
+},
+{
+"text": "Killing Sentinel Mechs (3%)",
+"sub": false
+},
+{
+"text": "Process certain procedural data into Nanites (from Buried Caches) (3%)",
+"sub": false
+},
+{
+"text": "Opening Salvaged Glass (~3%)",
+"sub": false
+},
+{
+"text": "Process certain procedural damaged technology into parts (from Buried Caches) (~1.8%)",
+"sub": false
+},
+{
+"text": "Bounty Hunter missions (~1.8%)",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Sentinel_Boundary_Map"
+},
+"prod166": {
+"rarity": "",
+"sources": [
+{
+"text": "Occasionally obtained from Salvaged Glass.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Sentinel_Weapons_Shard"
+},
+"prod167": {
+"rarity": "",
+"sources": [
+{
+"text": "Occasionally obtained from Salvaged Glass.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Sentinel_Exosuit_Fragment"
+},
+"cur117": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Rockfin"
+},
+"cur126": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Shrieking_Oyster"
+},
+"cur130": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Singing_Sea-Snail"
+},
+"cur218": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Shadowfin"
+},
+"cur136": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Sea_Cucumber"
+},
+"cur288": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Rusted_Technology"
+},
+"cur283": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Sea_Sponge"
+},
+"cur210": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Rimescale_Snapper"
+},
+"cur292": {
+"rarity": "",
+"sources": [
+{
+"text": "Harvested from Deep-Sea Samples in deep oceans.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Sea_Glass"
+},
+"cur148": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Scorpionfish"
+},
+"cur149": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Shrieking_Venttail"
+},
+"cur247": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Shalebound_Starfish"
+},
+"cur249": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Silicate_Crab"
+},
+"cur251": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Saltscale_Bloater"
+},
+"raw74": {
+"rarity": "",
+"sources": [
+{
+"text": "Dropped from Child of the Waves enemies spawned by the Deepwater Guardian.",
+"sub": false
+},
+{
+"text": "Extracted from Boundary Horrors in Expedition 16: The Cursed.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Shattered_Qualia"
+},
+"raw46": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "This element can be harvested from wild plants, but requires the use of Haz-Mat Gauntlet, once every 21 hours (real time).",
+"sub": false
+},
+{
+"text": "It can also be found mixed with carbon in carbon-based plants or trees. For easy discovery, scan the surrounding flora with the Analysis Visor.",
+"sub": false
+},
+{
+"text": "Please note the spawn rate for the \"classic\" solanium plants is really low and it is easier to find the element on other flora found on scorched planets.",
+"sub": false
+},
+{
+"text": "With assistance from a Farmer, Solanium can be grown as a product of the Solar Vine plant, providing a base yield of 50 with a harvest time of 16 hours. It requires the use of Haz-Mat Gauntlet to safely harvest.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Solanium"
+},
+"raw47": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "This element can be harvested from wild plants, but requires the use of Haz-Mat Gauntlet.",
+"sub": false
+},
+{
+"text": "It can also be found mixed with carbon in carbon-based plants or trees. For easy discovery, scan the surrounding flora with the Analysis Visor.",
+"sub": false
+},
+{
+"text": "Please note that the spawn rate for the \"classic\" star bulb plants is really low and is easier to find the element mixed with other flora found on lush planets.",
+"sub": false
+},
+{
+"text": "With assistance from a Farmer, Star Bulbs can also be grown as a product of Star Bramble with a harvest time of approximately 4 hours and yielding 25 Star Bulbs.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Star_Bulb"
+},
+"raw35": {
+"rarity": "Common",
+"sources": [
+{
+"text": "As a secondary element in some flora",
+"sub": false
+},
+{
+"text": "Rarely as a primary resource in some minerals",
+"sub": false
+},
+{
+"text": "From Atmosphere Harvesters built on planets with Scorched, Barren or Volcanic biomes",
+"sub": false
+},
+{
+"text": "Using Gas Extractor at a Sulphurine Concentrated Gas Cloud",
+"sub": false
+},
+{
+"text": "Raiding some Resource Depots",
+"sub": false
+},
+{
+"text": "From Mutant Plants in Frozen biomes",
+"sub": false
+},
+{
+"text": "From a freighter's Stellar Extractor Room when in a Green Star System",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Sulphurine"
+},
+"prod66": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Can be obtained as a mission reward.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Superconductor"
+},
+"trade26": {
+"rarity": "",
+"sources": [
+{
+"text": "Star Silk can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Trading Economy star systems. It is also obtainable in some, but not all, low-wealth systems with this Economy.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Star_Silk"
+},
+"cur10": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is given after talking to an Atlas Interface. Milestone Curiosity or above is required.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/State_Phasure"
+},
+"prod80": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint can be acquired from Manufacturing Facilites or purchased from the Synthesis Laboratory for 250.",
+"sub": false
+},
+{
+"text": "The following ingredients are needed to create the three main parts of a Stasis device.",
+"sub": false
+},
+{
+"text": "400 Gamma Root",
+"sub": false
+},
+{
+"text": "50 Faecium",
+"sub": false
+},
+{
+"text": "200 Frost Crystal",
+"sub": false
+},
+{
+"text": "150 Condensed Carbon",
+"sub": false
+},
+{
+"text": "250 Nitrogen",
+"sub": false
+},
+{
+"text": "250 Radon",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Stasis_Device"
+},
+"trade5": {
+"rarity": "",
+"sources": [
+{
+"text": "Superconducting Fibre can be purchased from Galactic Trade Terminals in all high-wealth Advanced Materials Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Superconducting_Fibre"
+},
+"trade6": {
+"rarity": "",
+"sources": [
+{
+"text": "Spark Canister can be purchased from Galactic Trade Terminals in all Power Generation Economy star systems. It can also be found in lockers on Derelict Freighter encounters.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Spark_Canister"
+},
+"trade30": {
+"rarity": "",
+"sources": [
+{
+"text": "Teleport Coordinators can be purchased from Galactic Trade Terminals in all high-wealth Trading Economy star systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Teleport_Coordinators"
+},
+"raw12": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "From yellow flowers visible on the Scanner.",
+"sub": false
+},
+{
+"text": "As a secondary element in some minerals.",
+"sub": false
+},
+{
+"text": "As a primary element in Underground Toxic Hazard.",
+"sub": false
+},
+{
+"text": "In Resource Deposits.",
+"sub": false
+},
+{
+"text": "Can always be bought from any Galactic Trade Terminal or from pilot NPCs on Space Stations (only on \"Goods Availability->Abundant\" setting).",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Sodium"
+},
+"raw13": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "Found as yellow crystal minerals sporadically on the surface of every planet. All Sodium Nitrate crystals require an Advanced Mining Laser to be mined, regardless of their size. All crystals within a short radius of the player are shown as a yellow (Na+) symbol on the HUD for a short period of time after activating the Scanner.",
+"sub": false
+},
+{
+"text": "Also available for purchase from some Galactic Trade Terminals and NPC Pilots.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Sodium_Nitrate"
+},
+"prod28": {
+"rarity": "",
+"sources": [
+{
+"text": "Starship Launch Fuel is also available from some Galactic Trade Terminals, though in some star systems, the price markup for it can be over 90%, resulting in prices in the ten-thousands for one canister.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Starship_Launch_Fuel"
+},
+"cur21": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be harvested on extreme weather planets during storms. Look for planets with activated minerals and search during a storm. Not all extreme weather or activated mineral planets have storm crystals.",
+"sub": false
+},
+{
+"text": "Other sources:",
+"sub": false
+},
+{
+"text": "From the Mercenaries Guild envoy aboard space stations (~14.5%)",
+"sub": false
+},
+{
+"text": "Certain Nexus missions (8.5%)",
+"sub": false
+},
+{
+"text": "Analysing a Crystal Fragment (5%)",
+"sub": false
+},
+{
+"text": "Derelict Freighter Crates (5%)",
+"sub": false
+},
+{
+"text": "Suspicious Packet (Goods) (3%)",
+"sub": false
+},
+{
+"text": "From Bounty Hunter missions in outlaw systems (3%)",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Storm_Crystal"
+},
+"cur20": {
+"rarity": "",
+"sources": [
+{
+"text": "The blueprint is acquired from -null- during The First Traveller mission.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Soul_Engine"
+},
+"prod22": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Starshield_Battery"
+},
+"cur48": {
+"rarity": "",
+"sources": [
+{
+"text": "The Stirring Void Egg can only occur once a Void Egg has been activated to become an Active Void Egg and is in the players inventory. Once the player leaves a Space Station or Anomaly and uses the pulse drive within a Star system. The player will be notified to drop out of Pulse and then will encounter a deep-space creature which then stirs the egg.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Stirring_Void_Egg"
+},
+"prod116": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Available from some Galactic Trade Terminals.",
+"sub": false
+},
+{
+"text": "Available from some Technology Merchants for 5000+ units.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Solar_Mirror"
+},
+"raw62": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "Resource found in Derelict Freighter space encounter.",
+"sub": false
+},
+{
+"text": "Received from Scrap Dealer and Guild Envoy in exchange for Crew Manifest and Captain's Log.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Tainted_Metal"
+},
+"cur105": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "Can be purchased for ~320 Tainted Metal",
+"sub": false
+},
+{
+"text": "Note: Tainted metal can be found in Derelict Freighters or obtained by selling the Crew Manifest and the Captain's Log to the Scrap Dealer.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Suspicious_Packet_%28Tech%29"
+},
+"cur104": {
+"rarity": "Rare",
+"sources": [],
+"url": "https://nomanssky.fandom.com/wiki/Suspicious_Packet_%28Goods%29"
+},
+"cur106": {
+"rarity": "Rare",
+"sources": [],
+"url": "https://nomanssky.fandom.com/wiki/Suspicious_Packet_%28Arms%29"
+},
+"cur65": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be gained as a reward from the Autodiagnostics: 5 milestone of Expedition 3: Cartographers, which requires you to repair the Frameshift Catapult",
+"sub": false
+},
+{
+"text": "It can also be obtained as a mission reward from the Bounty Master found in Outlaw Space Stations.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Station_Override"
+},
+"trade37": {
+"rarity": "",
+"sources": [
+{
+"text": "Purchaseable in outlaw systems.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Stolen_DNA_Samples"
+},
+"raw70": {
+"rarity": "Common",
+"sources": [
+{
+"text": "Can be found on Derelict Freighters and are used in Expedition 7: Leviathan.",
+"sub": false
+},
+{
+"text": "Can be gathered on any derelict freighter via using Q to bash-mine the onboard pustules.",
+"sub": false
+},
+{
+"text": "Somnal Dust is used in Expedition Seven: Leviathan in the Loop Research mission.",
+"sub": false
+},
+{
+"text": "Other than this, it appears to have little purpose beyond its value.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Somnal_Dust"
+},
+"cur108": {
+"rarity": "",
+"sources": [
+{
+"text": "The bait can only be crafted if your current multi-tool has the Fishing Rig or Lost Angler's Rig upgrade. The Fishing Rig upgrade can be purchased in the Space Anomaly.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Spicy_Chum"
+},
+"cur119": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Stonescale_Shark"
+},
+"cur121": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Spiny_Starfish"
+},
+"cur193": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Starshell_Crab"
+},
+"cur282": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Tangleweed"
+},
+"cur225": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Sweetwater_Minnow"
+},
+"cur243": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Sweeperfish"
+},
+"cur38": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be found in Damaged Containers or as monolith rewards.",
+"sub": false
+},
+{
+"text": "It can also be bought from NPCs in Trading Posts",
+"sub": false
+},
+{
+"text": "It is a possible reward from frigate expeditions.",
+"sub": false
+},
+{
+"text": "It is also a possible trade from wandering traders you encounter while using the Pulse Engine.",
+"sub": false
+},
+{
+"text": "It can also be salvaged from containers on a Derelict Freighter",
+"sub": false
+},
+{
+"text": "It is a possible reward from NPCs at Space Stations for practicing language skills well.",
+"sub": false
+},
+{
+"text": "It can be rewarded to a player by interacting with and pleasing Vy'keen Corporal NPCs.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Vy%27keen_Dagger"
+},
+"prod19": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Also available from any Galactic Trade Terminal.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Unstable_Plasma"
+},
+"cur37": {
+"rarity": "",
+"sources": [
+{
+"text": "It can be found in Damaged Containers or as monolith rewards.",
+"sub": false
+},
+{
+"text": "It can also be bought from NPCs in Trading Posts.",
+"sub": false
+},
+{
+"text": "It is a possible reward from frigate expeditions.",
+"sub": false
+},
+{
+"text": "It is also a possible trade from wandering traders you encounter while using the Pulse Engine.",
+"sub": false
+},
+{
+"text": "It is also a possible reward from Salvaged Glass dropped by Sentinels.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Vy%27keen_Effigy"
+},
+"prod55": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Sometimes awarded for opening Crashed Freighter's Cargo Pods.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Unstable_Gel"
+},
+"trade17": {
+"rarity": "",
+"sources": [
+{
+"text": "Unrefined Pyrite Grease can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Mining Economy star systems. It is also obtainable in some, but not all, low-wealth systems with this Economy, this item can also be found by destroying cargo bays in a space frigate or freighates.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Unrefined_Pyrite_Grease"
+},
+"trade35": {
+"rarity": "",
+"sources": [
+{
+"text": "High Capacity Vector Compressor can be purchased from Galactic Trade Terminals in all high-wealth Manufacturing Economy star systems.",
+"sub": false
+},
+{
+"text": "It can also be received as a reward for completing a mission",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Vector_Compressors"
+},
+"raw55": {
+"rarity": "Rare",
+"sources": [
+{
+"text": "Viscous Fluids can be purchased and sold at Galactic Trade Terminals and NPCs for a profit.",
+"sub": false
+},
+{
+"text": "Viscous Fluid frequently appears as a removed item to repair Damaged Machinery.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Viscous_Fluids"
+},
+"prod61": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Can be found in planetary depots.",
+"sub": false
+},
+{
+"text": "Can be obtained as a mission reward.",
+"sub": false
+},
+{
+"text": "Can be obtained from Frigate expeditions.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Thermic_Condensate"
+},
+"raw7": {
+"rarity": "Common",
+"sources": [
+{
+"text": "Tritium can be acquired in a variety of ways:",
+"sub": false
+},
+{
+"text": "Extracted from some asteroids, tritium rich asteroids can be detected with the starship scanner.",
+"sub": false
+},
+{
+"text": "In its crystallized form as a Tritium Hypercluster. (Hover over them with your mouse and press E to \"Analyze\".) (97%)",
+"sub": false
+},
+{
+"text": "As a secondary element in some cave minerals (14%)",
+"sub": false
+},
+{
+"text": "Some Galactic Trade Terminals and system traders. (Small amounts always sold in Outlaw Systems.)",
+"sub": false
+},
+{
+"text": "Can be found in a freighter after purchasing one.",
+"sub": false
+},
+{
+"text": "Can be found in a starship after purchasing one.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Tritium"
+},
+"raw27": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "In Mineral deposits on Irradiated biomes.",
+"sub": false
+},
+{
+"text": "Can be found in Metal 'Fingers'.",
+"sub": false
+},
+{
+"text": "Also available from some Galactic Trade Terminals, but the purchase price is much higher than the nominal value.",
+"sub": false
+},
+{
+"text": "Recycling Radioactive Industrial Waste at a Waste Processing Plant.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Uranium"
+},
+"cur2": {
+"rarity": "",
+"sources": [
+{
+"text": "Loot from a Sentinel Walker",
+"sub": false
+},
+{
+"text": "Mercenaries Guild Envoy",
+"sub": false
+},
+{
+"text": "Suspicious Packet (Goods)",
+"sub": false
+},
+{
+"text": "Mission Board missions",
+"sub": false
+},
+{
+"text": "Nexus missions",
+"sub": false
+},
+{
+"text": "Can be found on a robot at the Harmonic Scrap point of interest",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Walker_Brain"
+},
+"cur86": {
+"rarity": "",
+"sources": [
+{
+"text": "One Trident Key can be received from the Refracted Light located at the Submerged Ruin, after listening to The Voice of the Shell dialogue.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Trident_Key"
+},
+"cur30": {
+"rarity": "",
+"sources": [
+{
+"text": "Asteroid mining occasionally provides Tritium Hyperclusters.",
+"sub": false
+},
+{
+"text": "One of the possible results of opening a Glowing Mineral.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Tritium_Hypercluster"
+},
+"cur33": {
+"rarity": "",
+"sources": [
+{
+"text": "A quest item in the main storyline to show a Vy'keen cartographer that you are worthy to receive information about the Vy'keen's history.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Vy%27keen_Tablet"
+},
+"cur46": {
+"rarity": "",
+"sources": [
+{
+"text": "The Void Egg can be purchased from the Quicksilver Synthesis Companion for 3200 .",
+"sub": false
+},
+{
+"text": "A decorative only version can also be found randomly on Infested Planets.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Void_Egg"
+},
+"raw73": {
+"rarity": "Uncommon",
+"sources": [
+{
+"text": "By completing Autophage missions (200-600 Void Motes).",
+"sub": false
+},
+{
+"text": "By scrapping an Atlas Multi-Tool at the Multi-Tool Decommissioning Terminal (100-5400 Void Motes).",
+"sub": false
+},
+{
+"text": "Void Motes can occasionally be found in wheelbarrows around Harmonic Camps.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Void_Mote"
+},
+"cur113": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Tiny_Scuttlefish"
+},
+"cur129": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Thunderfin"
+},
+"cur133": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/The_Lunker"
+},
+"cur135": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Venomous_Triggerfin"
+},
+"cur138": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Toxic_Jelly"
+},
+"cur154": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Translucent_Gulper"
+},
+"cur152": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Vampire_Squid"
+},
+"cur201": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Thawed_Diamondfin"
+},
+"cur335": {
+"rarity": "",
+"sources": [
+{
+"text": "On planets with Ancient Bones, near fossils. Shows up on analysis visor.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Vigilant_Stone"
+},
+"cur221": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Wandering_Kelpfin"
+},
+"cur144": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Toxic_Stonefish"
+},
+"cur145": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Venomtooth_Wriggler"
+},
+"cur150": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Viper_Eel"
+},
+"cur257": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Titanworm_Larva"
+},
+"cur244": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Twilight_Cavefish"
+},
+"prod17": {
+"rarity": "",
+"sources": [
+{
+"text": "The total resources needed to build a Warp Cell from scratch are:",
+"sub": false
+},
+{
+"text": "Warp Cells can also be found by locating an Atlas Interface or The Atlas; inside you'll sometimes find two Warp Cells near to the interaction area.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Warp_Cell"
+},
+"trade22": {
+"rarity": "",
+"sources": [
+{
+"text": "Welding Soap can be purchased from Galactic Trade Terminals in all medium-wealth and high-wealth Technology Economy star systems. It is also obtainable in some, but not all, low-wealth systems with this Economy.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Welding_Soap"
+},
+"prod81": {
+"rarity": "",
+"sources": [
+{
+"text": "Can be purchased at a Galactic Trade Terminal in any star base for about double of the announced value (50-55K units).",
+"sub": false
+},
+{
+"text": "Can be dismantled from Obsolete Technology or most Upgrade Modules.",
+"sub": false
+},
+{
+"text": "Can be purchased from technologists in outposts for around 75000 units.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Wiring_Loom"
+},
+"prod18": {
+"rarity": "",
+"sources": [
+{
+"text": "Blueprint can be found in Manufacturing Facilities and Operations Centres, or purchased from Synthesis Laboratory for 250 .",
+"sub": false
+},
+{
+"text": "Occasionally shows up as a reward for a Nexus mission.",
+"sub": false
+},
+{
+"text": "Can be awarded by Guild Envoys.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Warp_Hypercore"
+},
+"cur231": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Wispscale_Darter"
+},
+"cur124": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Whispering_Bonefish"
+},
+"cur219": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Warty_Frogfish"
+},
+"cur224": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Warden_Eel"
+},
+"cur142": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Weltscale_Clam"
+},
+"cur147": {
+"rarity": "",
+"sources": [
+{
+"text": "Obtained via fishing.",
+"sub": false
+}
+],
+"url": "https://nomanssky.fandom.com/wiki/Waspfish"
+}
+}
+}

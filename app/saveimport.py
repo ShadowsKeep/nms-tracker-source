@@ -151,46 +151,69 @@ def sync_inventory(data, sources) -> dict:
     return {'items': len(wanted), 'changed': changed}
 
 
+def ship_keys(save_path, index) -> list:
+    """save_key values for one hangar slot. A game slot is two files (auto + manual save),
+    so a ship imported from one must still be recognised when the other is the newer file."""
+    p = savefile.Path(save_path)
+    digits = ''.join(ch for ch in p.stem if ch.isdigit())
+    n = int(digits) if digits else 1
+    twin = n + 1 if n % 2 else n - 1
+    twin_path = p.with_name(f"save{'' if twin == 1 else twin}.hg")
+    return [f'{p}#{index}', f'{twin_path}#{index}']
+
+
+def linked_ship(save_path, index):
+    return Ship.query.filter(Ship.save_key.in_(ship_keys(save_path, index))).first()
+
+
 def sync_ships(data, save_path, indexes) -> dict:
-    """Create/update tracker ships from the save. Repairs no longer damaged in game are ticked off."""
-    created = fixed = added = 0
+    """Create/update tracker ships from the save. The save is the truth for how many slots of
+    each part are still broken; slots repaired in game are ticked off one by one."""
+    created = fixed = added = reopened = 0
     for info in data['ships']:
         if info['index'] not in indexes:
             continue
-        key = f"{save_path}#{info['index']}"
-        ship = Ship.query.filter_by(save_key=key).first()
+        ship = linked_ship(save_path, info['index'])
         if ship is None:
             if not info['damaged']:
                 continue          # nothing to track on a healthy ship
-            ship = Ship(name=info['name'], kind=info['kind'], save_key=key)
+            ship = Ship(name=info['name'], kind=info['kind'], save_key=f"{save_path}#{info['index']}")
             db.session.add(ship)
             db.session.flush()
             created += 1
         else:
             ship.name = info['name']
-        open_rows = {}
+        rows_by_item = defaultdict(list)
         for rep in ship.repairs:
-            if not rep.done:
-                open_rows.setdefault(rep.item_id, rep)
+            rows_by_item[rep.item_id].append(rep)
         for item_id, count in info['damaged'].items():
-            rep = open_rows.pop(item_id, None)
-            if rep is None:
+            rows = rows_by_item.pop(item_id, [])
+            if not rows:
                 db.session.add(Repair(ship_id=ship.id, item_id=item_id, qty=count))
                 added += 1
-            elif count < rep.qty:
-                # some of these were repaired in game: credit them as done
-                repaired = rep.qty - count
-                done_row = next((r for r in ship.repairs if r.done and r.item_id == item_id), None)
-                if done_row:
-                    done_row.qty += repaired
-                else:
-                    db.session.add(Repair(ship_id=ship.id, item_id=item_id, qty=repaired, done=True))
-                rep.qty = count
-                fixed += repaired
-            else:
-                rep.qty = count
-        for rep in open_rows.values():   # was damaged, is not any more: repaired in game
-            rep.done = True
-            fixed += rep.qty
+                continue
+            still_open = sum(r.remaining for r in rows)
+            if count < still_open:                  # some were repaired in game
+                left = still_open - count
+                fixed += left
+                for rep in rows:
+                    take = min(rep.remaining, left)
+                    rep.set_fixed(rep.fixed + take)
+                    left -= take
+            elif count > still_open:                # ticked off here but still broken in game
+                extra = count - still_open
+                reopened += extra
+                for rep in reversed(rows):
+                    take = min(rep.fixed, extra)
+                    rep.set_fixed(rep.fixed - take)
+                    extra -= take
+                if extra:                           # more damage than was ever listed
+                    rows[0].qty += extra
+                    rows[0].set_fixed(rows[0].fixed)
+        for rows in rows_by_item.values():   # was damaged, is not any more: repaired in game
+            for rep in rows:
+                fixed += rep.remaining
+                rep.set_fixed(rep.qty)
     db.session.commit()
-    return {'created': created, 'repairs_added': added, 'repairs_fixed': fixed}
+    return {'created': created, 'repairs_added': added, 'repairs_fixed': fixed,
+            'repairs_reopened': reopened}

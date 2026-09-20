@@ -24,19 +24,23 @@
       <a class="nav-item {% if active == 'ships' and not active_ship %}active{% endif %}" href="{{ url_for('pages.ships') }}"><span class="nav-ico">&#9992;</span> Ship Repairs</a>
       <a class="nav-item {% if active == 'save' %}active{% endif %}" href="{{ url_for('pages.save_import') }}"><span class="nav-ico">&#8635;</span> Import from Save</a>
 
+      <div id="navShips" data-live>
       {% if nav_ships %}
         <div class="nav-label">Your ships</div>
         {% for s in nav_ships %}
           <a class="nav-sub {% if active_ship == s.id %}active{% endif %}" href="{{ url_for('pages.ship', ship_id=s.id) }}">
             <span class="nav-sub-name">{{ s.name }}</span>
-            <span class="nav-sub-count {% if s.total and s.fixed == s.total %}done{% endif %}">
+            <span class="nav-sub-count {% if s.total and s.fixed == s.total %}done{% endif %}" data-ship-count="{{ s.id }}">
               {% if s.total and s.fixed == s.total %}&#10003;{% else %}{{ s.fixed }}/{{ s.total }}{% endif %}
             </span>
           </a>
         {% endfor %}
       {% endif %}
+      </div>
 
       <div class="sidebar-foot">
+        <a class="live-tag {% if live_on %}on{% endif %}" id="liveTag" href="{{ url_for('pages.save_import') }}"
+           title="{{ 'Reads your save again whenever the game saves' if live_on else 'Turn on live sync on the Import page' }}"><i></i> Live sync {{ 'on' if live_on else 'off' }}</a>
         <form action="{{ url_for('pages.items') }}" method="get" class="quick-search">
           <input type="search" name="q" placeholder="Find any item…" autocomplete="off">
         </form>
@@ -49,6 +53,7 @@
   </div>
 
   <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script>const LIVE_REV = {{ live_rev }};</script>
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
   {% block scripts %}{% endblock %}
 </body>

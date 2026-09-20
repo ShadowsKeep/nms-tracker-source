@@ -8,6 +8,7 @@
   <p>What you still need to gather, and how your ships are doing.</p>
 </header>
 
+<div id="overviewZone" data-live>
 <div class="stat-row">
   <a class="stat" href="{{ url_for('pages.collect') }}">
     <div class="stat-num {{ 'warn' if s.materials_missing else 'ok' }}">{{ s.materials_missing }}</div>
@@ -77,4 +78,5 @@
     </div>
   </section>
 {% endif %}
+</div>
 {% endblock %}

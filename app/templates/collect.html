@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% from '_macros.html' import tile, chip, have_editor, bar %}
+{% from '_macros.html' import tile, chip, have_editor, bar, where %}
 {% block title %}Collect List{% endblock %}
 
 {% block content %}
@@ -19,11 +19,13 @@
     <button class="seg-btn active" data-show="all">All</button>
     <button class="seg-btn" data-show="missing">Still needed</button>
     <button class="seg-btn" data-show="ready">Covered</button>
+    <button class="seg-btn" data-show="hard" title="Rare, or can only be found in the world: not bought or crafted">Hard to find</button>
   </div>
   <input type="search" id="rowSearch" class="search" placeholder="Filter…" autocomplete="off">
   <span class="count" id="rowCount"></span>
 </div>
 
+<div id="collectZone" data-live>
 {% if not rows %}
   <section class="panel empty">
     <h2>Nothing to collect yet</h2>
@@ -37,14 +39,18 @@
       </thead>
       <tbody>
         {% for r in rows %}
-          <tr class="collect-row {{ 'is-ready' if r.missing == 0 else 'is-missing' }}" data-item="{{ r.item.id }}" data-need="{{ r.need }}">
+          <tr class="collect-row {{ 'is-ready' if r.missing == 0 else 'is-missing' }} {{ 'is-hard' if r.item.hard }}" data-item="{{ r.item.id }}" data-need="{{ r.need }}">
             <td>
               {{ chip(r.item) }}
               <div class="hints">
                 {% if r.refinable %}<span class="hint-tag">refinable</span>{% endif %}
                 {% if r.craftable %}<span class="hint-tag">craftable</span>{% endif %}
+                {% if r.item.hard %}<span class="hint-tag warn">hard to find</span>{% endif %}
                 <span class="dim">{{ r.item.group }}</span>
               </div>
+              {% if r.item.wiki and r.item.wiki.sources %}
+                <details class="where" data-where="{{ r.item.id }}"><summary>Where to find it</summary>{{ where(r.item, 4) }}</details>
+              {% endif %}
             </td>
             <td class="num need-cell">{{ r.need }}</td>
             <td>{{ have_editor(r.item.id, r.have) }}</td>
@@ -65,18 +71,22 @@
     </section>
   {% endif %}
 {% endif %}
+</div>
 {% endblock %}
 
 {% block scripts %}
 <script>
   let showMode = 'all';
-  const rows = Array.from(document.querySelectorAll('.collect-row'));
+  const getRows = () => Array.from(document.querySelectorAll('.collect-row'));   // rows are replaced on live refresh
   const search = document.getElementById('rowSearch');
   function applyRowFilter() {
     const q = (search ? search.value : '').trim().toLowerCase();
     let shown = 0;
+    const rows = getRows();
     rows.forEach(r => {
-      const ok = (showMode === 'all' || (showMode === 'missing') === r.classList.contains('is-missing'))
+      const ok = (showMode === 'all'
+                  || (showMode === 'hard' ? r.classList.contains('is-hard') && r.classList.contains('is-missing')
+                                          : (showMode === 'missing') === r.classList.contains('is-missing')))
               && (!q || r.textContent.toLowerCase().includes(q));
       r.style.display = ok ? '' : 'none';
       if (ok) shown++;
@@ -90,6 +100,15 @@
   }));
   if (search) search.addEventListener('input', applyRowFilter);
   applyRowFilter();
+  // keep the filter and any opened "Where to find it" notes across a live refresh
+  let openNotes = [];
+  document.addEventListener('live-before', () => {
+    openNotes = Array.from(document.querySelectorAll('details.where[open]')).map(d => d.dataset.where);
+  });
+  document.addEventListener('live-refreshed', () => {
+    openNotes.forEach(id => { const d = document.querySelector(`details.where[data-where="${id}"]`); if (d) d.open = true; });
+    applyRowFilter();
+  });
 
   // Live-update a row when its "have" changes
   document.addEventListener('have-changed', e => {

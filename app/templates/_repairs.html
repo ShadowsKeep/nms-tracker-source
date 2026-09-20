@@ -1,0 +1,48 @@
+{# The repair cards of one ship. Rendered inside ship.html and re-fetched on its own for live updates. #}
+{% from '_macros.html' import tile, chip, bar %}
+<div id="repairList" data-fixed="{{ ship.fixed }}" data-total="{{ ship.total }}" data-percent="{{ ship.percent }}">
+{% if not repairs %}
+  <section class="panel empty"><h2>No repairs listed</h2><p>Click the components above that are broken on this ship.</p></section>
+{% else %}
+  <div class="card-list">
+    {% for r in repairs %}
+      {% set rep = r.repair %}
+      {% set many = rep.qty > 1 %}
+      <article class="goal {{ 'done' if rep.done }} {{ 'ready' if r.ready and not rep.done }}" data-repair="{{ rep.id }}">
+        <div class="goal-main">
+          {{ tile(r.item, 'lg') }}
+          <div>
+            <a class="goal-name" href="{{ url_for('pages.item', item_id=r.item.id) }}">{{ r.item.name }}{% if many %} &times;{{ rep.qty }}{% endif %}</a>
+            <div class="dim">{{ r.item.group }}</div>
+            {% if many %}
+              <div class="slot-progress">{{ bar((rep.fixed / rep.qty * 100) | round | int) }}<span>{{ rep.fixed }}/{{ rep.qty }} repaired</span></div>
+            {% endif %}
+            {% if rep.done %}<div class="ready-tag">Repaired</div>
+            {% elif r.ready %}<div class="ready-tag">You have everything to fix {{ 'these' if rep.remaining > 1 else 'this' }} now</div>
+            {% elif r.can_fix %}<div class="ready-tag">You can fix {{ r.can_fix }} of these now</div>{% endif %}
+          </div>
+        </div>
+        <div class="chip-row">
+          {% if many and rep.fixed and not rep.done %}<span class="dim small">Still needed for the {{ rep.remaining }} left:</span>{% endif %}
+          {% for p in r.parts %}
+            <span class="req {{ 'ok' if p.ok or rep.done }}">{{ chip(p.item, p.need) }}{% if not rep.done %}<span class="dim">have {{ p.have }}</span>{% endif %}</span>
+          {% else %}
+            <span class="dim">No material cost on record for this part.</span>
+          {% endfor %}
+        </div>
+        <div class="goal-actions">
+          {% if not rep.done %}
+            <button class="btn primary" data-repair-fix="{{ rep.id }}" data-delta="1" data-consume="1" title="Marks one slot repaired and removes its materials from your inventory">{{ 'Fixed 1 (use materials)' if many else 'Repaired (use materials)' }}</button>
+            <button class="btn" data-repair-fix="{{ rep.id }}" data-delta="1" data-consume="0">{{ 'Fixed 1' if many else 'Mark repaired' }}</button>
+            {% if rep.remaining > 1 %}<button class="btn" data-repair-fix="{{ rep.id }}" data-fixed="{{ rep.qty }}" data-consume="0">All {{ rep.qty }} fixed</button>{% endif %}
+          {% endif %}
+          {% if rep.fixed %}
+            <button class="btn" data-repair-fix="{{ rep.id }}" data-delta="-1" data-consume="0">{{ 'Undo 1' if many else 'Undo' }}</button>
+          {% endif %}
+          <button class="btn danger" data-repair-delete="{{ rep.id }}">Remove</button>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+{% endif %}
+</div>
