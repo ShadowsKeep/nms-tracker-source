@@ -44,6 +44,7 @@ function toast(title, text, tone) {
 // server has already synced it; this page only needs to show the new numbers.
 let liveRev = typeof LIVE_REV === 'number' ? LIVE_REV : 0;
 async function livePoll() {
+  if (document.hidden) return;          // hidden to the tray or minimised: do nothing at all
   let res;
   try {
     const r = await fetch('/api/live', { method: 'POST', headers: API_HEADERS, body: '{}' });
@@ -52,6 +53,8 @@ async function livePoll() {
   } catch (e) { return; }               // app is closing; stay quiet
   if (!res.enabled || res.rev === liveRev) return;
   const note = ['Synced from your save', res.note, 'gold'];
+  const tag = document.getElementById('liveTag');
+  if (tag) { tag.classList.remove('blink'); void tag.offsetWidth; tag.classList.add('blink'); }
   // do not change a number under someone who is typing it; try again on the next poll
   const el = document.activeElement;
   const typing = el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA');
@@ -69,7 +72,8 @@ async function livePoll() {
     location.reload();
   }
 }
-setInterval(livePoll, 4000);
+setInterval(livePoll, 5000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) livePoll(); });  // catch up when shown again
 
 /**
  * Re-render this page on the server and swap in every element marked data-live (matched by id).

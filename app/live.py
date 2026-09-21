@@ -5,7 +5,10 @@ There is no background thread. Every open page polls /api/live every few seconds
 does a cheap stat() of the watched save slot and only decodes the file when it has changed.
 The save is still only ever read (see app.savefile).
 """
+import contextlib
+import ctypes
 import json
+import sys
 import threading
 import time
 
@@ -13,10 +16,29 @@ from app import db, savefile, saveimport
 from app.models import Setting
 
 KEY = 'live_sync'
-SETTLE_SECONDS = 2          # leave a file alone while the game may still be writing it
+SETTLE_SECONDS = 6          # stay out of the way while the game is busy saving
 
 _lock = threading.Lock()
 _state = {'rev': 0, 'note': '', 'failed': None}
+
+
+@contextlib.contextmanager
+def _background_priority():
+    """Run the save decode at Windows "background" priority (lowest CPU, disk and memory
+    priority) so a game running at the same time always wins. No-op elsewhere."""
+    if sys.platform != 'win32':
+        yield
+        return
+    k32 = ctypes.windll.kernel32
+    k32.GetCurrentThread.restype = ctypes.c_void_p
+    k32.SetThreadPriority.argtypes = (ctypes.c_void_p, ctypes.c_int)
+    thread = k32.GetCurrentThread()
+    began = k32.SetThreadPriority(thread, 0x00010000)      # THREAD_MODE_BACKGROUND_BEGIN
+    try:
+        yield
+    finally:
+        if began:
+            k32.SetThreadPriority(thread, 0x00020000)      # THREAD_MODE_BACKGROUND_END
 
 
 def config() -> dict:
@@ -77,7 +99,8 @@ def _check(cfg):
     if time.time() - stamp < SETTLE_SECONDS:
         return
     try:
-        data = saveimport.read(newest['path'])
+        with _background_priority():
+            data = saveimport.read(newest['path'])
     except Exception:  # noqa: BLE001 - half-written or unreadable: wait for the next save
         _state['failed'] = stamp
         return

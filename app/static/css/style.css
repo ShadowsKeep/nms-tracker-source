@@ -313,8 +313,11 @@ code { font-family: Consolas, monospace; font-size: .85em; color: var(--teal); }
 .live-tag { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); text-decoration: none; }
 .live-tag i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
 .live-tag.on { color: var(--teal); }
-.live-tag.on i { background: var(--teal); box-shadow: 0 0 8px var(--teal); animation: live-pulse 2s ease-in-out infinite; }
-@keyframes live-pulse { 50% { opacity: .35; } }
+/* No looping animation here: an endless one keeps Chromium redrawing on the GPU at 60 fps,
+   which steals frames from the game. The dot blinks once when a sync actually lands. */
+.live-tag.on i { background: var(--teal); box-shadow: 0 0 8px var(--teal); }
+.live-tag.on.blink i { animation: live-blink .9s ease-out 1; }
+@keyframes live-blink { 0% { transform: scale(2.2); opacity: .3; } 100% { transform: none; opacity: 1; } }
 .sync-controls { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
 .live-check { display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 600; }
 .live-check input { width: 18px; height: 18px; accent-color: var(--teal); }

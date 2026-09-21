@@ -1,5 +1,5 @@
 # NMS Tracker
-**Publisher:** Shadowskeep LLC · **Version:** 1.1.0
+**Publisher:** Shadowskeep LLC · **Version:** 1.2.0
 
 A desktop companion for No Man's Sky: track the materials you need, see what everything
 turns into, and work through ship repairs.

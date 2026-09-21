@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.2.0
+
+### Fixed
+- **Game lag with live sync on.** The pulsing "Live sync on" dot kept the app redrawing on the
+  graphics card non-stop, which took frames from the game. It now glows steadily and blinks once
+  when a sync lands.
+
+### Changed
+- Live sync does nothing while the window is minimised or hidden to the tray, and catches up the
+  moment it is shown again.
+- The save is read at Windows background priority, and 6 seconds after the game saves instead
+  of 2, so the game always comes first.
+
 ## 1.1.0
 
 ### New
